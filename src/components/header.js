@@ -72,9 +72,7 @@ const Header = ({ siteTitle, ...props }) => {
         <SocialLinks profiles={profiles} />
 
         <div className="copyrights">
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()}, Built with ReactJS
         </div>
 
       </div>

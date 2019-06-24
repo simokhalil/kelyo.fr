@@ -43,7 +43,7 @@ const SocialLinks = ({ profiles }) => {
     return (
         <div className={classes.root}>
           {profiles.map((profile, index) => (
-            <a className={classes.link} href={profile.url} target="_blank">
+            <a key={index} className={classes.link} href={profile.url} target="_blank" rel="noopener noreferrer">
               {profile.network === 'email'
                 ? <Icon className={`far fa-envelope ${classes.icon} `} />
                 : <Icon className={`fab fa-${profile.network} ${classes.icon}`} />

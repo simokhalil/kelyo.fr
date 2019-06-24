@@ -1,7 +1,5 @@
 import GoogleMapReact from 'google-map-react';
-import PropTypes from 'prop-types';
 import React from 'react';
-import { compose, withProps } from 'recompose';
 
 import { Icon } from '@material-ui/core';
 
@@ -26,11 +24,12 @@ const Map = ({ children, ...props }) => {
                     lat={props.center.lat}
                     lng={props.center.lng}
                     style={{ fontSize: '40px', color: '#0099e5' }}
+                    {...props}
                 />
             </GoogleMapReact>
         </div>
 
     );
-}
+};
 
 export default Map;

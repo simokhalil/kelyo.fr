@@ -12,7 +12,6 @@ const useStyles = makeStyles({
         fontSize: '1em',
         fontFamily: 'Poppins, Robotto, sans-serif',
         lineHeight: '1.2',
-        border: 0,
         outline: 0,
         border: '2px solid #0099e5',
         color: '#222',

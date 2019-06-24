@@ -77,7 +77,7 @@ const TimelineItem = ({ period, company, title, description, website }) => {
             <div className={classes.left}>
                 <h5 className={classes.period}>{period}</h5>
                 {website
-                    ? <a href={website} className={classes.company} target="_blank">{company}</a>
+                    ? <a href={website} className={classes.company} target="_blank" rel="noopener noreferrer">{company}</a>
                     : <span className={classes.company}>{company}</span>
                 }
             </div>

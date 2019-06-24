@@ -17,13 +17,13 @@ const useStyles = makeStyles({
         WebkitBoxShadow: 'none',
         boxShadow: 'none',
         overflow: 'hidden',
-        WebkitTransition: 'all 0.2s ease-in-out',
         transition: 'all 0.2s ease-in-out',
+        WebkitTransition: 'all 0.2s ease-in-out',
         '&:hover': {
-            WebkitTransform: 'translateY(-5px)',
             transform: 'translateY(-5px)',
-            WebkitBoxShadow: '0 12px 17px rgba(0, 0, 0, 0.12)',
+            WebkitTransform: 'translateY(-5px)',
             boxShadow: '0 12px 17px rgba(0, 0, 0, 0.12)',
+            WebkitBoxShadow: '0 12px 17px rgba(0, 0, 0, 0.12)',
         },
     },
     icon: {
