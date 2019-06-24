@@ -1,0 +1,362 @@
+{
+    "basics": {
+        "name": "Khalil EL ISMAILI",
+        "label": "Développeur Web & Mobile",
+        "yearsOfExperience": "5",
+        "picture": "/images/khalil_el_ismaili.png",
+        "email": "khalil@kelyo.fr",
+        "phone": "06.51.33.92.73",
+        "resumeUrl": "/CV_Khalil_EL_ISMAILI.pdf",
+        "website": "https://kelyo.fr",
+        "summary": [
+            "Après une licence EEA (Electronique, Electrotechnique et Automatisme) et un BTS IG (Informatique de Gestion), j'ai entammé une formation d'ingénieur à l'ENSIM.",
+            "Ayant une passion sans fin pour l'informatique et les nouvelles technologies, j'ai participé, au-delà des études, à des projets concrets et professionnels avec différentes entreprises.",
+            "Toutes ces formations et expériences m'ont permis d'acquérir une bonne expérience en développement Web et mobile, mais aussi en ce qui concerne les clients lourds.",
+            "Ces expériences m'ont donné une certaine adaptabilité me permettant de participer à la plupart des projets."
+        ],
+        "location": {
+            "city": "Nantes",
+            "countryCode": "France"
+        },
+        "profiles": [
+            {
+                "network": "email",
+                "username": "khalilelismaili",
+                "url": "mailto://khalil@kelyo.fr"
+            },
+            {
+                "network": "linkedin",
+                "username": "khalilelismaili",
+                "url": "https://www.linkedin.com/in/khalilelismaili/"
+            },
+            {
+                "network": "twitter",
+                "username": "@simokhalil",
+                "url": "https://twitter.com/simokhalil"
+            },
+            {
+                "network": "github",
+                "username": "simokhalil",
+                "url": "https://github.com/simokhalil"
+            }
+        ],
+        "services": [
+            [
+                {
+                    "icon": "fa fa-mobile-alt",
+                    "fontawesome": true,
+                    "title": "Développement Mobile",
+                    "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
+                },
+                {
+                    "icon": "fab fa-chrome",
+                    "fontawesome": true,
+                    "title": "Développement Front-end",
+                    "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
+                }
+            ],
+            [
+                {
+                    "icon": "fab fa-node-js",
+                    "fontawesome": true,
+                    "title": "Développement Back-end",
+                    "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
+                },
+                {
+                    "icon": "people_outline",
+                    "fontawesome": false,
+                    "title": "Développement Mobile",
+                    "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
+                }
+            ]
+        ]
+    },
+    "work": [
+        {
+            "company": "Leenkr",
+            "position": "Fondateur",
+            "website": "https://www.leenkr.com",
+            "startDate": "2017-08",
+            "endDate": "Aujourd'hui",
+            "summary": "Dévloppement de la plateforme Leenkr.com",
+            "highlights": [
+                "Leenkr est une plateforme de recrutement dédiée aux stages et aux contrats d'alternance : \n- Pour les candidats, Leenkr représente un endroit unique où rechercher des offres de stages/alternance et de cibler les entreprises qu'ils convoitent.\n- Pour les recruteurs, Leekr est un outils complet permettant non seulement de rechercher les candidats idéaux pour un poste, mais aussi de gérer le processus entier de recrutement avec système d'ATS (Applicant Tracking System) intégré., ",
+                "Technos/Frameworks : NodeJS, ExpressJS, MongoDB, ReactJS, Algolia",
+                "Intégration continue : Docker, Jenkins"
+            ]
+        },
+        {
+            "company": "Niji",
+            "position": "Ingénieur d'études",
+            "website": "https://www.niji.fr",
+            "startDate": "2017-03",
+            "endDate": "Aujourd'hui",
+            "summary": "Développeur Web & Mobile",
+            "highlights": [
+                "Analyse, conception et développement d'applications Web et Mobile, en mode Agile, sur plusieurs projets, dans des domaines divers et variés (banque, assurance, santé, éducation, Télécom).\nDe par ma position de Lead-Dev sur les projets Mobile hybride et Web, j'ai pu assurer la formation et la montée en compétences de développeurs juniors, afin de les accompagner vers l'autonomie.",
+                "Technos/Frameworks : \n- Javascript : ReactJS, Angular2+, TypeScript \n- Mobile : ReactNative, Ionic \n- Backend : NodeJS (express)",
+                "Intégration continue : Contenirisation LXC, Docker, Jenkins, Bitrise, Fabric",
+                "Méthodologie : Agile, Scrum",
+                "Clients : Henner, Biogen, Alzohis, CBP, Vivalto Santé, CA Titres, Polytech, CER France, TDF"
+            ]
+        },
+        {
+            "company": "Parkly",
+            "position": "Fondateur",
+            "website": "https://www.parkly.fr",
+            "startDate": "2016-01",
+            "endDate": "2016-12",
+            "summary": "Dévloppement de la plateforme parkly.fr",
+            "highlights": [
+                "Parkly est un ensemble d'applications Web et Mobile permettant le partage du parking entre particuliers, de manière communautaire :",
+                "Partage de parkings publiques (sur Mobile), afin de faciliter/accélérer la recherche d'emplacement dans les grandes villes.",
+                "Partage de parkings privés (Site Web), plutôt orienté stationnement longue durée, via la location entre particuliers de places de stationnement privées sous-utilisées.",
+                "Technos/Frameworks : \n- Web : PHP/Laravel, Javascript/Angular/jQuery, Redis, Bootstrap \n- Mobile : Ionic, Cordova, AngularJS, NodeJS, WebSockets \n- Serveurs : Apache, Nginx, MySQL, RabbitMQ \n- Solutions : Google Analytics, Piwik, Mailgun, Plivo, MailChimp, Mailtrap \n- DevOps : Git/Gitlab, Gulp, PhpStorm, Bower, Rollbar"
+            ]
+        },
+        {
+            "company": "CGI",
+            "position": "Ingénieur d'études et développement",
+            "website": "https://www.cgi.fr",
+            "startDate": "2015-09",
+            "endDate": "2017-02",
+            "summary": "Analyste technico-fonctionnel Web & Mobile",
+            "highlights": [
+                "Analyse et conception d'applications Mobile hybrides, et développement d'applications Web AngularJS, pour des clients grands-comptes.",
+                "Technos/Frameworks : AngularJS, jQuery Mobile, Cordova, Ionic",
+                "Tâches assurées : Analyse de CDC, Conception, Rédaction de DCG (Document de Conception Général), Mesure d'impacts, Développement, Gestion/Coordination des tests fonctionnels, Recette, Suivi de mise en production",
+                "Clients : Groupe La Poste / La Banque Postale, Conseil Elevage"
+            ]
+        },
+        {
+            "company": "CGI",
+            "position": "Stage Ingénieur d'études et développement Mobilité",
+            "website": "https://www.cgi.fr",
+            "startDate": "2015-03",
+            "endDate": "2015-08",
+            "summary": "Stage de fin d'études",
+            "highlights": [
+                "Développement d'applications mobiles hybrides/natives pour un projet interne",
+                "Développement de 6 applications mobiles hybrides (Android, iOS, webApp) sur une base commune (marque blanche) dans le domaine de l'épargne salariale, sous Ionic/AngularJS",
+                "Technos/Frameworks : Ionic, Titanium, Xamarin, Android (JAVA)",
+                "Clients : CGI, S2E, Conseil Elevage"
+            ]
+        },
+        {
+            "company": "idéesculture",
+            "position": "Technicien Analyste Développeur Web & Mobile",
+            "website": "http://www.ideesculture.com/",
+            "startDate": "2014-07",
+            "endDate": "2014-08",
+            "summary": "Stage \"Technicien\"",
+            "highlights": [
+                "Web :\n- HTML, CSS, MySQL \n- PHP \n- Zend Framework \n- WebGL for 3D visualization on browser",
+                "Applications mobiles hybrides :\n- Sencha Framework \n- Appcelerator Titanium Framework"
+            ]
+        },
+        {
+            "company": "Sarthe Habitat",
+            "position": "Administrateur Systèmes et Réseaux",
+            "website": "https://www.sarthe-habitat.fr",
+            "startDate": "2010-09",
+            "endDate": "2012-08",
+            "summary": "Alternance",
+            "highlights": [
+                "Administration des Systèmes/LAN/vLAN de l'entreprise.",
+                "Installation et administration de serveurs sous Windows Server et Linux.",
+                "Administration de la messagerie MS Exchange.",
+                "Suivi d'appels d'offres et rédaction de cahiers des charges.",
+                "Gestion du parc informatique.",
+                "Support Niveau 3."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "ENSIM",
+            "area": "Le Mans",
+            "studyType": "Diplôme d'ingénieur",
+            "startDate": "2012-09",
+            "endDate": "2015-08",
+            "gpa": "14",
+            "summary": "Ingénieur en Informatique",
+            "description": "Option Interactions Personnes-Systèmes"
+        },
+        {
+            "institution": "Lycée Notre-Dame de Sainte-Croix",
+            "area": "Le Mans",
+            "studyType": "BTS",
+            "startDate": "2010-09",
+            "endDate": "2012-08",
+            "gpa": "15",
+            "summary": "BTS Informatique de Gestion",
+            "description": "Option Administration de Réseaux Locaux d'Entreprises"
+        },
+        {
+            "institution": "Université de Reims",
+            "area": "Reims",
+            "studyType": "Licence",
+            "startDate": "2005-09",
+            "endDate": "2008-07",
+            "gpa": "12",
+            "summary": "Licence Sciences et Technologies pour l'Ingénieur",
+            "description": "Option Electronique, Electrotechnique, Automatique et Informatique industrielle"
+        }
+    ],
+    "skills": [
+        {
+            "title": "Frontend",
+            "description": [
+                "<DESCRIPTION_1>",
+                "<DESCRIPTION_2>",
+                "<DESCRIPTION_3>"
+            ],
+            "skillDetails": [
+                {
+                    "name": "Angular",
+                    "level": "60",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "React.js",
+                    "level": "80",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "HTML5",
+                    "level": "80",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "CSS3",
+                    "level": "80",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Mobile",
+            "description": [
+                "<DESCRIPTION_1>",
+                "<DESCRIPTION_2>",
+                "<DESCRIPTION_3>"
+            ],
+            "skillDetails": [
+                {
+                    "name": "Ionic (Angular)",
+                    "level": "90",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "React Native",
+                    "level": "90",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Backend",
+            "description": [
+                "<DESCRIPTION_1>",
+                "<DESCRIPTION_2>",
+                "<DESCRIPTION_3>"
+            ],
+            "skillDetails": [
+                {
+                    "name": "NodeJS (Express)",
+                    "level": "70",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "PHP (Laravel)",
+                    "level": "50",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "PHP (Symfony 2/3)",
+                    "level": "50",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Bases de données",
+            "description": [
+                "<DESCRIPTION_1>",
+                "<DESCRIPTION_2>",
+                "<DESCRIPTION_3>"
+            ],
+            "skillDetails": [
+                {
+                    "name": "MySQL",
+                    "level": "80",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "PostgreSQL",
+                    "level": "70",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                },
+                {
+                    "name": "MongoDB",
+                    "level": "70",
+                    "keywords": [
+                        "<KEYWORD_1>",
+                        "<KEYWORD_2>",
+                        "<KEYWORD_3>"
+                    ]
+                }
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "name": "<LANGUAGE_NAME>",
+            "level": "<LANGUAGE_LEVEL>"
+        }
+    ]
+}
