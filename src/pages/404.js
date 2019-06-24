@@ -1,14 +1,47 @@
-import React from "react"
+import React from 'react';
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+import Button from '../components/form/Button';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo';
+import Page from '../components/content/Page';
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+    height: '100%',
+    background: '#fff',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  h1: {
+    fontSize: '72px',
+    lineHeight: '72px',
+    fontWeight: '500',
+    color: '#ccc',
+  },
+});
+
+const NotFoundPage = () => {
+  const classes = useStyles();
+
+  return (
+    <Layout>
+      <SEO title="404: Not found"/>
+
+      <Page>
+        <div className={classes.root}>
+          <h1 className={classes.h1}>404</h1>
+          <h2>PAGE INTROUVABLE</h2>
+          <p>L'Url que vous tentez de visiter n'existe pas</p>
+          <Button href="/">Retour à l'accueil</Button>
+        </div>
+      </Page>
+    </Layout>
+  );
+}
 
 export default NotFoundPage
