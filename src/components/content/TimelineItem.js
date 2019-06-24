@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -8,17 +9,18 @@ import { nl2br } from '../../utils/stringUtils';
 const useStyles = makeStyles({
     root: {
         position: 'relative',
-        display: 'table',
+        display: isMobile ? 'block' : 'table',
         tableLayout: 'fixed',
         width: '100%',
         paddingBottom: '15px',
     },
     left: {
-        width: '30%',
-        display: 'table-cell',
+        width: isMobile ? '100%' : '30%',
+        display: isMobile ? 'block' : 'table-cell',
         paddingRight: '25px',
+        paddingLeft: isMobile ? '25px' : undefined,
         minHeight: '100%',
-        textAlign: 'right',
+        textAlign: isMobile ? 'left' : 'right',
         verticalAlign: 'top',
     },
     period: {
@@ -36,7 +38,7 @@ const useStyles = makeStyles({
     divider: {
         position: 'absolute',
         top: 0,
-        left: '30%',
+        left: isMobile ? 0 : '30%',
         bottom: 0,
         width: '1px',
         backgroundColor: '#eee',
@@ -53,10 +55,10 @@ const useStyles = makeStyles({
         }
     },
     right: {
-        width: '70%',
-        display: 'table-cell',
+        width: isMobile ? '100%' : '70%',
+        display: isMobile ? 'block' : 'table-cell',
         paddingLeft: '25px',
-        paddingRight: '15px',
+        paddingRight: isMobile ? 0 : '15px',
         verticalAlign: 'top',
     },
     title: {
@@ -66,6 +68,7 @@ const useStyles = makeStyles({
     description: {
         fontSize: '0.92em',
         textAlign: 'justify',
+        paddingLeft: isMobile ? '10px' : '40px',
     },
 });
 

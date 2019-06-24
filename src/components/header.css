@@ -161,8 +161,109 @@
     color: #aeaeae;
 }
 
+.menu-toggle {
+    display: block;
+    width: 50px;
+    margin: 0 4px;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    float: right;
+}
+
 @media only screen and (min-width: 991px) {
     .header {
         width: 160px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .header {
+        width: 100%;
+        max-width: 320px;
+        height: calc(100% - 50px);
+        left: 0;
+        top: 50px;
+        z-index: 1001;
+        opacity: 1;
+        overflow: auto;
+        visibility: visible;
+        -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.18);
+        -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.18);
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.18);
+        -webkit-transition: all 0s ease-in-out;
+        -moz-transition: all 0s ease-in-out;
+        -o-transition: all 0s ease-in-out;
+        -ms-transition: all 0s ease-in-out;
+        transition: all 0s ease-in-out;
+    }
+
+    .mobile-menu-hide {
+        width: 0;
+        left: 0;
+        margin-left: -100%;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .header.animate {
+        -webkit-transition: all 0.44s ease-in-out;
+        -moz-transition: all 0.44s ease-in-out;
+        -o-transition: all 0.44s ease-in-out;
+        -ms-transition: all 0.44s ease-in-out;
+        transition: all 0.44s ease-in-out;
+    }
+
+    .mobile-header {
+        position: fixed;
+        display: inline-block;
+        width: 100%;
+        max-width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #f5f5f5;
+        left: 0;
+        right: 0;
+        height: 50px;
+        z-index: 1002;
+    }
+
+    .mobile-logo-container {
+        margin: 0 20px;
+        text-align: left;
+    }
+
+    .mobile-logo-container {
+        margin: 0 20px;
+        text-align: left;
+        float: left;
+    }
+
+    .mobile-header-image {
+        float: left;
+    }
+
+    .mobile-header-image img {
+        max-height: 34px;
+        margin: 8px 8px 8px 0;
+    }
+
+    .mobile-site-title {
+        float: left;
+        color: #222;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: Poppins,Helvetica,sans-serif;
+        margin: 0;
+        line-height: 50px;
+    }
+
+    .mobile-site-title a, .mobile-site-title a:focus, .mobile-site-title a:hover {
+        color: #222;
     }
 }

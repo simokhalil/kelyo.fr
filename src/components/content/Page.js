@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { isMobile, isMobileOnly } from "react-device-detect";
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -10,7 +11,7 @@ const useStyles = makeStyles({
         height: '100%',
         minWidth: '100%',
         minHeight: '100%',
-        paddingLeft: '15px',
+        paddingLeft: isMobileOnly ? 0 : '15px',
         margin: '0 auto',
         top: 0,
         left: 0,

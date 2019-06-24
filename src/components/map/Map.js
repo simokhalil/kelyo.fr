@@ -1,21 +1,30 @@
 import GoogleMapReact from 'google-map-react';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
-import { Icon } from '@material-ui/core';
+import { Icon, makeStyles } from '@material-ui/core';
 
 const mapStyles = require("./map-style.json");
 
+const useStyles = makeStyles({
+    root: {
+        height: isMobile ? '200px' : '400px',
+        margin: '0 0 30px',
+    }
+});
+
 const Map = ({ children, ...props }) => {
+    const classes = useStyles();
 
     return (
-        <div style={{ height: '400px', margin: '0 0 30px' }}>
+        <div className={classes.root}>
             <GoogleMapReact
                 bootstrapURLKeys={{
                     key: 'AIzaSyCPlh6wxElx2eEzm9y93YIpXlPvXCuCfm0',
                 }}
                 defaultZoom={12}
                 defaultCenter={props.center}
-                options={{ styles: mapStyles, disableDefaultUI: true }}
+                options={{ styles: mapStyles, disableDefaultUI: true, scrollwheel: false, }}
                 yesIWantToUseGoogleMapApiInternals
                 {...props}
             >

@@ -1,5 +1,8 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useStaticQuery, graphql } from 'gatsby';
+
+import { makeStyles } from '@material-ui/core';
 
 import Col from '../components/content/Col';
 import Layout from "../components/layout/layout";
@@ -10,6 +13,20 @@ import Row from '../components/content/Row';
 import SEO from "../components/seo";
 import Section from '../components/content/Section';
 import SectionTitle from '../components/content/SectionTitle';
+
+const useStyles = makeStyles({
+  h1: {
+    fontSize: isMobile ? '36px' : '48px',
+    lineHeight: '1.2em',
+    marginBottom: '15px',
+    fontWeight: '600',
+  },
+  h2: {
+    color: '#888',
+    fontSize: '14px',
+    fontWeight: '300',
+  },
+});
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -33,6 +50,8 @@ const IndexPage = () => {
     }
   `);
 
+  const classes = useStyles();
+
   const { basics } = data.file.childDataJson;
 
   return (
@@ -49,8 +68,8 @@ const IndexPage = () => {
 
               <Col item xs={12} md={6}>
                 <div className="hp-text-block">
-                  <h2 style={{ color: '#888', fontSize: '14px', fontWeight: '300' }}>{basics.label}</h2>
-                  <h1 style={{ fontSize: '48px', lineHeight: '1.2em', marginBottom: '15px', fontWeight: '600' }}>{basics.name}</h1>
+                  <h2 className={classes.h2}>{basics.label}</h2>
+                  <h1 className={classes.h1}>{basics.name}</h1>
 
                   {basics.summary.map((line, index) => (
                     <p key={index}>{line}</p>
@@ -91,7 +110,7 @@ const IndexPage = () => {
               <SectionTitle title="Technologies" />
 
               <Row>
-                <Col xs={12} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Col xs={12} style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                   <i className="devicon-javascript-plain colored" style={{ fontSize: '54px' }}></i>
                   <i className="devicon-typescript-plain colored" style={{ fontSize: '54px' }}></i>
                   <i className="devicon-webpack-plain-wordmark colored" style={{ fontSize: '54px' }} />

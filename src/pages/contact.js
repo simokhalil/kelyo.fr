@@ -1,4 +1,5 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Col from '../components/content/Col';
@@ -80,17 +81,15 @@ const ContactPage = () => {
             </Col>
           </Row>
 
-          <Section>
-            <Row>
-              <Col xs={12} sm={2}></Col>
-              <Col xs={12} sm={8}>
-                <SectionTitle title="Comment je peux vous aider ?" />
+          <Row>
+            <Col xs={12} sm={2}></Col>
+            <Col xs={12} sm={8} style={{ padding: '50px 0' }}>
+              <SectionTitle title="Que puis-je faire pour vous ?" />
 
-                <ContactForm />
-              </Col>
-              <Col xs={12} sm={2}></Col>
-            </Row>
-          </Section>
+              <ContactForm />
+            </Col>
+            <Col xs={12} sm={2}></Col>
+          </Row>
         </Section>
       </Page>
     </Layout>
