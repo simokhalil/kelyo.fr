@@ -50,7 +50,7 @@ exports.submitContactForm = functions.https.onRequest((req, res) => {
             to: 'khalil@kelyo.fr',
             subject: `[kelyo.fr Contact] - ${subject}`,
             text: message,
-            html: `<p><strong>De : </strong> ${name} <${email}</p>
+            html: `<p><strong>De : </strong> ${name} (${email})</p>
                 <p><strong>Sujet : </strong> ${subject}</p>
                 <p><strong>Message : </strong> ${message}</p>`
         };
