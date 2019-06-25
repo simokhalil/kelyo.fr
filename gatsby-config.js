@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Khalil EL ISMAILI`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Consultant Javascript, ReactJS, Angular, VueJS NodeJS`,
+    author: `Khalil EL ISMAILI`,
+    siteUrl: `https://kelyo.fr`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -70,6 +71,7 @@ module.exports = {
         // cookieDomain: "kelyo.fr",
       },
     },
+    `gatsby-plugin-sitemap`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
