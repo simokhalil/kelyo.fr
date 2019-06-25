@@ -26,6 +26,9 @@ const useStyles = makeStyles({
     fontSize: '14px',
     fontWeight: '300',
   },
+  text: {
+    textAlign: 'justify',
+  }
 });
 
 const IndexPage = () => {
@@ -72,7 +75,7 @@ const IndexPage = () => {
                   <h1 className={classes.h1}>{basics.name}</h1>
 
                   {basics.summary.map((line, index) => (
-                    <p key={index}>{line}</p>
+                    <p key={index} className={classes.text}>{line}</p>
                   ))}
 
                   <ResumeDownloadButton url={basics.resumeUrl} />

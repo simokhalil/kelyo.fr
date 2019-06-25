@@ -34,6 +34,7 @@ const useStyles = makeStyles({
     },
     text: {
         fontSize: '0.92em',
+        textAlign: 'justify',
     },
 });
 
