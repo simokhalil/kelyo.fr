@@ -13,7 +13,7 @@ const mailTransport = nodemailer.createTransport({
     },
 });
 
-exports.submitContactForm = functions.https.onRequest((req, res) => {
+exports.submitContactForm = functions.region('europe-west1').https.onRequest((req, res) => {
     cors(req, res, () => {
         if (req.method !== "POST") {
             return;

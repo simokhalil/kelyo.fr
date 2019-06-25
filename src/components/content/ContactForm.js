@@ -102,7 +102,7 @@ const ContactForm = () => {
 
         let response = null;
 
-        axios.post("https://us-central1-kelyo-e9b61.cloudfunctions.net/submitContactForm", data)
+        axios.post("https://europe-west1-kelyo-e9b61.cloudfunctions.net/submitContactForm", data)
             .then((res) => {
                 console.log('res', res);
 
