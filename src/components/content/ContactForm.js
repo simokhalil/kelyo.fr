@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import firebase from "firebase/app";
+import { isMobileOnly } from 'react-device-detect';
 
 import { CircularProgress, TextField, makeStyles } from '@material-ui/core';
 
@@ -155,7 +156,7 @@ const ContactForm = () => {
                         value={values.name}
                         onChange={handleChange}
                         className={classes.textField}
-                        margin="normal"
+                        margin={isMobileOnly ? 'dense' : 'normal'}
                         variant="outlined"
                         error={Boolean(errors.name)}
                         helperText={errors.name ? errorMessages[`name.${errors.name}`] : null}
@@ -168,7 +169,7 @@ const ContactForm = () => {
                         value={values.email}
                         onChange={handleChange}
                         className={classes.textField}
-                        margin="normal"
+                        margin={isMobileOnly ? 'dense' : 'normal'}
                         variant="outlined"
                         error={Boolean(errors.email)}
                         helperText={errors.email ? errorMessages[`email.${errors.email}`] : null}
@@ -180,7 +181,7 @@ const ContactForm = () => {
                         value={values.subject}
                         onChange={handleChange}
                         className={classes.textField}
-                        margin="normal"
+                        margin={isMobileOnly ? 'dense' : 'normal'}
                         variant="outlined"
                         error={Boolean(errors.subject)}
                         helperText={errors.subject ? errorMessages[`subject.${errors.subject}`] : null}

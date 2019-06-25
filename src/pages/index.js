@@ -1,3 +1,4 @@
+import BackgroundImage from 'gatsby-background-image';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -34,7 +35,7 @@ const useStyles = makeStyles({
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      file(name: {eq: "resume"}, sourceInstanceName: {eq: "data"}) {
+      profile: file(name: {eq: "resume"}, sourceInstanceName: {eq: "data"}) {
         childDataJson {
           basics {
             label
@@ -50,12 +51,20 @@ const IndexPage = () => {
           }
         }
       }
+      profileImage: file(relativePath: { eq: "profile_lg.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 800) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
   const classes = useStyles();
 
-  const { basics } = data.file.childDataJson;
+  const { basics } = data.profile.childDataJson;
+  const imageData = data.profileImage.childImageSharp.fluid;
 
   return (
     <Layout>
@@ -66,7 +75,11 @@ const IndexPage = () => {
           <div className="start-page-full-width">
             <Row>
               <Col item xs={12} md={6} lg={6}>
-                <div className="full-block" />
+                <BackgroundImage
+                  Tag="div"
+                  className="full-block"
+                  fluid={imageData}
+                />
               </Col>
 
               <Col item xs={12} md={6}>

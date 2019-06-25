@@ -1,5 +1,4 @@
 import React from 'react';
-import { isMobile } from 'react-device-detect';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Col from '../components/content/Col';

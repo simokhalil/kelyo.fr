@@ -48,15 +48,13 @@ const Header = ({ siteTitle, ...props }) => {
         <div className="header-content">
           <div className="header-image">
             <Link to="/">
-              <img src="/images/profile_sm.png" alt="Khalil EL ISMAILI" />
+              <img src="/images/kelyo_logo.png" alt="Khalil EL ISMAILI" />
             </Link>
           </div>
 
           <div className="site-title-block">
-            <Link to="/">
-              <h1 className="site-title">
-                {siteTitle}
-              </h1>
+            <Link to="/" className="site-title">
+              {siteTitle}
             </Link>
           </div>
 
@@ -85,7 +83,7 @@ const Header = ({ siteTitle, ...props }) => {
         <div className="mobile-logo-container">
           <div className="mobile-header-image">
             <Link to="/">
-              <img src="/images/profile_sm.png" alt="Khalil EL ISMAILI" />
+              <img src="/images/kelyo_logo.png" alt="Khalil EL ISMAILI" />
             </Link>
           </div>
 
