@@ -48,7 +48,7 @@ const Header = ({ siteTitle, ...props }) => {
         <div className="header-content">
           <div className="header-image">
             <Link to="/">
-              <img src="/images/kelyo_logo.png" alt="Khalil EL ISMAILI" />
+              <img src="/images/kelyo_logo.png" alt={siteTitle} />
             </Link>
           </div>
 
@@ -83,7 +83,7 @@ const Header = ({ siteTitle, ...props }) => {
         <div className="mobile-logo-container">
           <div className="mobile-header-image">
             <Link to="/">
-              <img src="/images/kelyo_logo.png" alt="Khalil EL ISMAILI" />
+              <img src="/images/kelyo_logo.png" alt={siteTitle} />
             </Link>
           </div>
 
