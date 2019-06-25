@@ -13,10 +13,10 @@ const links = [
     path: '/',
     label: 'Accueil',
   }, {
-    path: '/resume',
+    path: '/resume/',
     label: 'Mon CV',
   }, {
-    path: '/contact',
+    path: '/contact/',
     label: 'Contact',
   }
 ];
@@ -39,6 +39,8 @@ const Header = ({ siteTitle, ...props }) => {
       }
     }
   `);
+
+  console.log('globalHistory.location.pathname', globalHistory.location.pathname);
 
   const { profiles } = data.file.childDataJson.basics;
 

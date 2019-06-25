@@ -59,15 +59,15 @@ module.exports = {
       options: {
         trackingId: 'UA-142692655-1',
         head: false, // Defines where to place the tracking script - `true` in the head and `false` in the body
-        anonymize: true, // Setting this parameter is optional
-        respectDNT: true, // Setting this parameter is also optional
-        exclude: ["/preview/**", "/do-not-track/me/too/"], // Avoids sending pageview hits from custom paths
+        anonymize: false, // Setting this parameter is optional
+        respectDNT: false, // Setting this parameter is also optional
+        // exclude: ["/preview/**", "/do-not-track/me/too/"], // Avoids sending pageview hits from custom paths
         // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID", // Enables Google Optimize using your container Id
         // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID", // Enables Google Optimize Experiment ID
         // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID", // Set Variation ID. 0 for original 1,2,3....
         // Any additional create only fields (optional)
         // sampleRate: 5,
-        siteSpeedSampleRate: 10,
+        // siteSpeedSampleRate: 10,
         // cookieDomain: "kelyo.fr",
       },
     },
