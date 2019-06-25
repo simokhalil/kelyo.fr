@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import { Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -43,12 +44,12 @@ const SocialLinks = ({ profiles }) => {
     return (
         <div className={classes.root}>
           {profiles.map((profile, index) => (
-            <a key={index} className={classes.link} href={profile.url} target="_blank" rel="noopener">
+            <OutboundLink key={index} className={classes.link} href={profile.url} target="_blank" rel="noopener">
               {profile.network === 'email'
                 ? <Icon className={`far fa-envelope ${classes.icon} `} />
                 : <Icon className={`fab fa-${profile.network} ${classes.icon}`} />
               }
-            </a>
+            </OutboundLink>
           ))}
         </div>
     );
