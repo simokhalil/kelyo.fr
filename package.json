@@ -7,6 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^4.1.1",
     "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
     "firebase": "^6.2.2",
     "gatsby": "^2.9.11",
     "gatsby-background-image": "^0.7.3",
@@ -20,6 +21,7 @@
     "gatsby-plugin-sharp": "^2.2.1",
     "gatsby-plugin-sitemap": "^2.2.0",
     "gatsby-source-filesystem": "^2.1.0",
+    "gatsby-source-prismic": "^2.3.0-alpha.3",
     "gatsby-transformer-json": "^2.2.0",
     "gatsby-transformer-remark": "^2.4.0",
     "gatsby-transformer-sharp": "^2.2.0",
