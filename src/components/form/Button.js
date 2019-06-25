@@ -24,6 +24,15 @@ const useStyles = makeStyles({
         '&:hover': {
             backgroundColor: '#0099e5',
             color: '#fff',
+        },
+        '&[disabled]': {
+            border: '2px solid #ccc',
+            backgroundColor: '#eee',
+            color: '#888',
+            '&:hover': {
+                backgroundColor: '#eee',
+                color: '#888',
+            }
         }
     },
 });
