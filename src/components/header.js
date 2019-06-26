@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import { Link } from "gatsby";
-import { globalHistory } from "@reach/router";
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import { globalHistory } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SocialLinks from './content/SocialLinks';
@@ -12,21 +12,23 @@ const links = [
   {
     path: '/',
     label: 'Accueil',
-  }, {
+  },
+  {
     path: '/resume/',
     label: 'Mon CV',
-  }, {
+  },
+  {
     path: '/contact/',
     label: 'Contact',
-  }
+  },
 ];
 
 const Header = ({ siteTitle, ...props }) => {
-  const [ isOpen, setIsOpen ] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      file(name: {eq: "resume"}, sourceInstanceName: {eq: "data"}) {
+      file(name: { eq: "resume" }, sourceInstanceName: { eq: "data" }) {
         childDataJson {
           basics {
             profiles {
@@ -40,14 +42,17 @@ const Header = ({ siteTitle, ...props }) => {
     }
   `);
 
-  console.log('globalHistory.location.pathname', globalHistory.location.pathname);
+  console.log(
+    'globalHistory.location.pathname',
+    globalHistory.location.pathname
+  );
 
   const { profiles } = data.file.childDataJson.basics;
 
-  const toggleMenu = (event) => {
+  const toggleMenu = event => {
     event.preventDefault();
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <>
@@ -68,7 +73,14 @@ const Header = ({ siteTitle, ...props }) => {
           <div className="site-nav dl-menuwrapper">
             <ul className="site-main-menu site-auto-menu">
               {links.map((link, index) => (
-                <li className={globalHistory.location.pathname === link.path ? 'active' : ''} key={index}>
+                <li
+                  className={
+                    globalHistory.location.pathname === link.path
+                      ? 'active'
+                      : ''
+                  }
+                  key={index}
+                >
                   <Link to={link.path} className="pt-trigger">
                     {link.label}
                   </Link>
@@ -82,7 +94,6 @@ const Header = ({ siteTitle, ...props }) => {
           <div className="copyrights">
             © {new Date().getFullYear()}, Built with ReactJS
           </div>
-
         </div>
       </header>
 
@@ -95,9 +106,7 @@ const Header = ({ siteTitle, ...props }) => {
           </div>
 
           <div className="mobile-site-title">
-            <Link to="/">
-              {siteTitle}
-            </Link>
+            <Link to="/">{siteTitle}</Link>
           </div>
         </div>
 
@@ -107,14 +116,14 @@ const Header = ({ siteTitle, ...props }) => {
       </div>
     </>
   );
-}
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

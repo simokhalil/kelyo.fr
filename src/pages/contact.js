@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Col from '../components/content/Col';
 import ContactForm from '../components/content/ContactForm';
 import InfoBlockRaise from '../components/content/InfoBlockRaise';
-import Layout from "../components/layout/layout";
+import Layout from '../components/layout/layout';
 import Map from '../components/map/Map';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
@@ -16,7 +16,7 @@ import SectionTitle from '../components/content/SectionTitle';
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
     query ConstactQuery {
-      file(name: {eq: "resume"}, sourceInstanceName: {eq: "data"}) {
+      file(name: { eq: "resume" }, sourceInstanceName: { eq: "data" }) {
         childDataJson {
           basics {
             email
@@ -43,9 +43,7 @@ const ContactPage = () => {
 
           <Row>
             <Col xs={12}>
-              <Map
-                center={{ lat: 47.218371, lng: -1.553621 }}
-              />
+              <Map center={{ lat: 47.218371, lng: -1.553621 }} />
             </Col>
           </Row>
 
@@ -93,6 +91,6 @@ const ContactPage = () => {
       </Page>
     </Layout>
   );
-}
+};
 
 export default ContactPage;

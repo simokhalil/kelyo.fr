@@ -7,20 +7,18 @@ import PageTitle from '../components/content/PageTitle.js';
 import Section from '../components/content/Section';
 
 const Post = ({ data: { prismicPost } }) => {
-    const { data } = prismicPost;
-    return (
-        <Layout>
-            <Page>
-                <Section>
+  const { data } = prismicPost;
+  return (
+    <Layout>
+      <Page>
+        <Section>
+          <PageTitle title={data.title.text} />
 
-                    <PageTitle title={data.title.text} />
-
-                    <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
-
-                </Section>
-            </Page>
-        </Layout>
-    )
+          <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
+        </Section>
+      </Page>
+    </Layout>
+  );
 };
 
 export default Post;

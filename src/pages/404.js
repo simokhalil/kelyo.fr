@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   h1: {
     fontSize: '72px',
@@ -30,7 +30,7 @@ const NotFoundPage = () => {
 
   return (
     <Layout>
-      <SEO title="404: Not found"/>
+      <SEO title="404: Not found" />
 
       <Page>
         <div className={classes.root}>
@@ -42,6 +42,6 @@ const NotFoundPage = () => {
       </Page>
     </Layout>
   );
-}
+};
 
-export default NotFoundPage
+export default NotFoundPage;
