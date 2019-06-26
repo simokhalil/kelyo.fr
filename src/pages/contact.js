@@ -35,7 +35,10 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <SEO title="Contact" />
+      <SEO
+        title="Contact"
+        pathname='/contact/'
+      />
 
       <Page>
         <Section>

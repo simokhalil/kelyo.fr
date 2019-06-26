@@ -69,6 +69,7 @@ const SecondPage = () => {
           <PageTitle
             title="Mon CV"
             description={`${basics.yearsOfExperience} ans d'expérience`}
+            pathname="/resume/"
           />
 
           <Row spacing={5}>
