@@ -1,13 +1,25 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Layout from '../components/layout/layout';
+import Page from '../components/content/Page';
+import PageTitle from '../components/content/PageTitle.js';
+import Section from '../components/content/Section';
+
 const Post = ({ data: { prismicPost } }) => {
     const { data } = prismicPost;
     return (
-        <React.Fragment>
-            <h1>{data.title.text}</h1>
-            <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
-        </React.Fragment>
+        <Layout>
+            <Page>
+                <Section>
+
+                    <PageTitle title={data.title.text} />
+
+                    <div dangerouslySetInnerHTML={{ __html: data.content.html }} />
+
+                </Section>
+            </Page>
+        </Layout>
     )
 };
 
