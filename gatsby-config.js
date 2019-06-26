@@ -2,8 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-console.log('process.env.API_KEY', process.env.API_KEY);
-
 module.exports = {
   siteMetadata: {
     title: `Khalil EL ISMAILI`,
@@ -40,7 +38,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/kelyo_favicon.jpg`, // This path is relative to the root of the site.
+        icon: `src/images/kelyo_favicon_inverse.jpg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -64,9 +62,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-142692655-1',
-        head: false, // Defines where to place the tracking script - `true` in the head and `false` in the body
-        anonymize: false, // Setting this parameter is optional
-        respectDNT: false, // Setting this parameter is also optional
+        // head: false, // Defines where to place the tracking script - `true` in the head and `false` in the body
+        // anonymize: false, // Setting this parameter is optional
+        // respectDNT: false, // Setting this parameter is also optional
         // exclude: ["/preview/**", "/do-not-track/me/too/"], // Avoids sending pageview hits from custom paths
         // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID", // Enables Google Optimize using your container Id
         // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID", // Enables Google Optimize Experiment ID
@@ -91,7 +89,7 @@ module.exports = {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `kelyo`,
-        accessToken: `${process.env.API_KEY}`,
+        accessToken: `${process.env.PRISMIC_API_KEY}`,
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },

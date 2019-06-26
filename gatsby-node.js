@@ -6,31 +6,37 @@
 
 const path = require('path');
 
-exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions;
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+console.log('process.env.BLOG', process.env.BLOG);
 
-    const pages = await graphql(`
-    {
-      allPrismicPost {
-        edges {
-          node {
-            id
-            uid
-          }
+if (process.env.BLOG === '1') {
+
+    exports.createPages = async ({ graphql, actions }) => {
+        const { createPage } = actions;
+
+        const pages = await graphql(`
+        {
+        allPrismicPost {
+            edges {
+            node {
+                id
+                uid
+            }
+            }
         }
-      }
-    }
-  `);
+        }
+    `);
 
-    const template = path.resolve("src/templates/post.jsx");
+        const template = path.resolve("src/templates/post.jsx");
 
-    pages.data.allPrismicPost.edges.forEach(edge => {
-        createPage({
-            path: `/blog/${edge.node.uid}`,
-            component: template,
-            context: {
-                uid: edge.node.uid,
-            },
+        pages.data.allPrismicPost.edges.forEach(edge => {
+            createPage({
+                path: `/blog/${edge.node.uid}`,
+                component: template,
+                context: {
+                    uid: edge.node.uid,
+                },
+            });
         });
-    });
+    }
 }
