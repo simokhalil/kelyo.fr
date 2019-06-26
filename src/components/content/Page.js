@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { isMobile, isMobileOnly } from "react-device-detect";
+import { isMobileOnly } from "react-device-detect";
 
 import { makeStyles } from '@material-ui/core/styles';
 

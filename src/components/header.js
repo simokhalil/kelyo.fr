@@ -44,6 +44,11 @@ const Header = ({ siteTitle, ...props }) => {
 
   const { profiles } = data.file.childDataJson.basics;
 
+  const toggleMenu = (event) => {
+    event.preventDefault();
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
       <header className={`header animate ${isOpen ? '' : 'mobile-menu-hide'}`}>
@@ -96,9 +101,9 @@ const Header = ({ siteTitle, ...props }) => {
           </div>
         </div>
 
-        <a className="menu-toggle mobile-visible" onClick={() => setIsOpen(!isOpen)}>
+        <button className="menu-toggle" onClick={toggleMenu}>
           <i className="fa fa-bars" />
-        </a>
+        </button>
       </div>
     </>
   );
