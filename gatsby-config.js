@@ -86,17 +86,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-source-prismic`,
-      options: {
-        repositoryName: `kelyo`,
-        accessToken: `${process.env.PRISMIC_API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         enableIdentityWidget: false,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
