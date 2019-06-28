@@ -1,0 +1,20 @@
+backend:
+  name: bitbucket
+  repo: simokhalil/kelyo.fr # Path to your Bitbucket repository
+  branch: default
+  auth_type: implicit
+  app_id: cbd9ZAaYr7nmFp7An7 # The Key from your Bitbucket settings
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
