@@ -5,8 +5,10 @@ title: Premier post de blog Netlify CMS
 ---
 Premier blog avec Netlify CMS
 
+> Ceci est une citation
 
+`console.log('ligne de code rapide');`
 
 ```
-console.log('test');
+// Un block de codeconsole.log('test');
 ```
