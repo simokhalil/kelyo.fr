@@ -4,17 +4,24 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
+import SEO from '../components/seo';
 import Section from '../components/content/Section';
 
 const Template = ({ data: { markdownRemark } }) => {
-    const { frontmatter, html } = markdownRemark;
+    const { frontmatter, excerpt, html } = markdownRemark;
 
     return (
         <Layout>
-            <Page>
-                <PageTitle title={frontmatter.title} description={frontmatter.date} />
+            <SEO
+                title={frontmatter.title}
+                pathname={`/blog/${frontmatter.path}`}
+                description={excerpt}
+            />
 
+            <Page>
                 <Section>
+                    <PageTitle title={frontmatter.title} description={frontmatter.date} />
+
                     <div className="blog-post-container">
                         <div className="blog-post">
                             <div
@@ -36,6 +43,7 @@ export const pageQuery = graphql`
     query BlogPostQuery($uid: String!) {
         markdownRemark(frontmatter: { path: { eq: $uid } }) {
             html
+            excerpt(pruneLength: 250)
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 path

@@ -42,11 +42,6 @@ const Header = ({ siteTitle, ...props }) => {
     }
   `);
 
-  console.log(
-    'globalHistory.location.pathname',
-    globalHistory.location.pathname
-  );
-
   const { profiles } = data.file.childDataJson.basics;
 
   const toggleMenu = event => {
