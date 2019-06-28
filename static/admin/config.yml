@@ -1,7 +1,7 @@
 backend:
   name: bitbucket
   repo: simokhalil/kelyo.fr # Path to your Bitbucket repository
-  branch: default
+  branch: master
   auth_type: implicit
   app_id: cbd9ZAaYr7nmFp7An7 # The Key from your Bitbucket settings
 
