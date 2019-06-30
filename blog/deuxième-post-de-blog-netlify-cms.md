@@ -2,6 +2,7 @@
 path: deuxième-blog-netlify
 date: 2019-06-28T18:46:16.839Z
 title: Deuxième post de blog Netlify CMS
+image: /images/uploads/kyoq7-otlhm.jpg
 ---
 Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus, sed splendore liberalium doctrinarum minus quam nobilem decuerat institutus, quo administrante seditiones sunt concitatae graves ob inopiam vini: huius avidis usibus vulgus intentum ad motus asperos excitatur et crebros.
 
