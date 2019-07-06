@@ -21,6 +21,7 @@ const BlogPage = (props) => {
       <SEO
         title="Blog"
         pathname='/blog/'
+        description="Kelyo Blog. Blog de Khalil EL ISMAILI. News tech, Tutoriaux Dév, astuces, et plein d'autres choses"
       />
 
       <Page>
