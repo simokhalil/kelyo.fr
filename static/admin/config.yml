@@ -11,11 +11,15 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - name: blog
     label: Blog
+    slug: "{{slug}}"
     folder: blog
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
-      - {label: "Image", name: "image", widget: "image"}
+      - { label: 'Title', name: "title", widget: "string" }
+      - { label: "Path", name: "path" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Keywords", name: "keywords", widget: "list" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
