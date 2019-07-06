@@ -1,7 +1,22 @@
 ---
+title: Premier post de blog Netlify CMS
 path: premier-blog-netlify
 date: 2019-06-28T18:46:16.839Z
-title: Premier post de blog Netlify CMS
+categories:
+  - dev
+  - tutos
+tags:
+  - dev
+  - tutos
+  - netlify
+  - netlify cms
+keywords:
+  - dev
+  - tuto
+  - tutoriel
+  - netlify
+  - cms
+  - netlifyCMS
 image: /images/uploads/blog1.jpg
 ---
 Premier blog avec Netlify CMS
