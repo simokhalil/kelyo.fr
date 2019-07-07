@@ -216,7 +216,7 @@ class ContactForm extends Component {
                     </Col>
                 </Row>
 
-                <Row>
+                {/* <Row>
                     <Col>
                         <ReCAPTCHA
                             ref={this.recaptchaRef}
@@ -225,7 +225,7 @@ class ContactForm extends Component {
                             onChange={this.handleSubmit}
                         />
                     </Col>
-                </Row>
+                </Row> */}
 
                 <Row>
                     <Col>
