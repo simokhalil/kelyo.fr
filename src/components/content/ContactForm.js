@@ -152,7 +152,9 @@ class ContactForm extends Component {
         const { errors, isLoading, isSendSuccess, values } = this.state;
 
         return (
-            <form onSubmit={this.onSubmit}>
+            <form method="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="contact" />
 
                 <div className={`${classes.notification} ${classes.success} ${isSendSuccess && 'visible'}`}>Votre message a bien été envoyé</div>
 
