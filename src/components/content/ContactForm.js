@@ -90,7 +90,7 @@ class ContactForm extends Component {
         event.preventDefault();
 
         const { values } = this.state;
-        const form = this.ContactForm.current;
+        const form = this.formRef.current;
 
         this.setState({
             isLoading: true,
