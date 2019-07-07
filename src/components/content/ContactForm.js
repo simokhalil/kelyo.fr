@@ -4,7 +4,16 @@ import axios from 'axios';
 import firebase from "firebase/app";
 import { isMobileOnly } from 'react-device-detect';
 
-import { CircularProgress, TextField, withStyles } from '@material-ui/core';
+import {
+    CircularProgress,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    TextField,
+    withStyles,
+} from '@material-ui/core';
 
 import Button from '../form/Button';
 import Col from './Col';
@@ -117,11 +126,11 @@ class ContactForm extends Component {
                         message: '',
                     },
                     isSendSuccess: true,
-                }, () => {
+                }/*, () => {
                     setTimeout(() => {
                         this.setState({ isSendSuccess: false });
                     }, 5000);
-                });
+                }*/);
             })
             .catch((error) => {
                 if (error.response) {
@@ -165,7 +174,7 @@ class ContactForm extends Component {
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
 
-                <div className={`${classes.notification} ${classes.success} ${isSendSuccess && 'visible'}`}>Votre message a bien été envoyé</div>
+                {/* <div className={`${classes.notification} ${classes.success} ${isSendSuccess && 'visible'}`}>Votre message a bien été envoyé</div> */}
 
                 <Row spacing={5}>
                     <Col xs={12} sm={6}>
@@ -243,6 +252,26 @@ class ContactForm extends Component {
                         </Button>
                     </Col>
                 </Row>
+
+                <Dialog
+                    open={isSendSuccess}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">Merci !</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            <p>J'ai bien reçu votre message, et vous en remercie.</p>
+                            <p>Je m'efforcerai de vous donner un retour au plus vite.</p>
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => this.setState({ isSendSuccess: false })} color="primary">
+                            OK
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </form>
         );
     }
