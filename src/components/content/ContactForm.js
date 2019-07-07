@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import firebase from "firebase/app";
 import { isMobileOnly } from 'react-device-detect';
@@ -40,9 +39,6 @@ const styles = {
             display: 'block',
             visibility: 'visible',
         }
-    },
-    success: {
-        backgroundColor: '#b6e8c6',
     },
 };
 
@@ -95,8 +91,36 @@ class ContactForm extends Component {
         });
     };
 
+    ValidateFormFields = () => {
+        const { values: { name, email, subject, message } } = this.state;
+        const errors = {};
+
+        if (!name || !name.length) {
+            errors.name = 'REQUIRED';
+        }
+        if (!email || !email.length) {
+            errors.email = 'REQUIRED';
+        }
+        if (!subject || !subject.length) {
+            errors.subject = 'REQUIRED';
+        }
+        if (!message || !message.length) {
+            errors.message = 'REQUIRED';
+        }
+
+        this.setState({ errors });
+
+        return Object.keys(errors).length === 0;
+    };
+
     onSubmit = (event) => {
         event.preventDefault();
+
+        const isFormValid = this.ValidateFormFields();
+
+        if (!isFormValid) {
+            return;
+        }
 
         const { values } = this.state;
         const form = this.formRef.current;
@@ -126,11 +150,7 @@ class ContactForm extends Component {
                         message: '',
                     },
                     isSendSuccess: true,
-                }/*, () => {
-                    setTimeout(() => {
-                        this.setState({ isSendSuccess: false });
-                    }, 5000);
-                }*/);
+                });
             })
             .catch((error) => {
                 if (error.response) {
@@ -173,8 +193,6 @@ class ContactForm extends Component {
             >
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
-
-                {/* <div className={`${classes.notification} ${classes.success} ${isSendSuccess && 'visible'}`}>Votre message a bien été envoyé</div> */}
 
                 <Row spacing={5}>
                     <Col xs={12} sm={6}>
