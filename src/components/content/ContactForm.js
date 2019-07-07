@@ -262,8 +262,7 @@ class ContactForm extends Component {
                     <DialogTitle id="alert-dialog-title">Merci !</DialogTitle>
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
-                            <p>J'ai bien reçu votre message, et vous en remercie.</p>
-                            <p>Je m'efforcerai de vous donner un retour au plus vite.</p>
+                            J'ai bien reçu votre message, et vous en remercie. Je m'efforcerai de vous donner un retour au plus vite.
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
