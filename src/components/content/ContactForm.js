@@ -243,7 +243,7 @@ class ContactForm extends Component {
                         </Button>
                     </Col>
                 </Row>
-            </formmethod="post">
+            </form>
         );
     }
 }
