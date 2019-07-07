@@ -33,9 +33,9 @@ const BlogPage = (props) => {
 
           <Row>
             {postList.edges.map(({ node }, index) => (
-              <Col xs={12} md={4} lg={6} style={{ padding: '0 1em 2em' }}>
+              <Col key={index} xs={12} md={4} lg={6} style={{ padding: '0 1em 2em' }}>
                 <div className="blog-item">
-                  <Link key={index} to={`/blog/${node.frontmatter.path}`} className="link" >
+                  <Link to={`/blog/${node.frontmatter.path}`} className="link" >
                     <div className="image-holder">
                       <img src={node.frontmatter.image} className="image" alt={node.frontmatter.title} />
                     </div>
