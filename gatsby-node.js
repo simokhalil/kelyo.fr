@@ -1,40 +1,11 @@
 const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
-    const { createPage } = actions;
+  const { createPage } = actions;
 
-    const pages = await graphql(`
-        {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] }
-                limit: 1000
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            path
-                        }
-                    }
-                }
-            }
-        }
-    `);
-
-    const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
-
-    pages.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: `blog/${node.frontmatter.path}`,
-            component: blogPostTemplate,
-            context: {
-                uid: node.frontmatter.path,
-            },
-        })
-    });
-
-    /* return graphql(`
+  const pages = await graphql(`
     {
-      allMarkdownRemark(
+      posts: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -46,20 +17,35 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
-    }
-  `).then(result => {
-        if (result.errors) {
-            return Promise.reject(result.errors)
-        }
 
-      return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-            createPage({
-                path: `blog/${node.frontmatter.path}`,
-                component: blogPostTemplate,
-                context: {
-                    uid: node.frontmatter.path,
-                },
-            })
-        })
-    }*/
+      categories: allMarkdownRemark {
+        distinct(field: frontmatter___categories)
+      }
+    }
+  `);
+
+  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+
+  console.log('pages', JSON.stringify(pages.data));
+
+  pages.data.posts.edges.forEach(({ node }) => {
+    createPage({
+      path: `blog/${node.frontmatter.path}`,
+      component: blogPostTemplate,
+      context: {
+        uid: node.frontmatter.path,
+      },
+    });
+  });
+
+  // Blog categories
+  /*pages.data.categories.distinct.map(({ category }) => {
+    createPage({
+      path: `blog/categories/${category}`,
+      component: blogPostTemplate,
+      context: {
+        uid: node.frontmatter.path,
+      },
+    })
+  });*/
 }

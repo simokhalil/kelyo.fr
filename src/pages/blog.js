@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby';
 import { isMobileOnly } from "react-device-detect";
 
+import CategoriesList from '../components/blog/sidebar/categories';
 import Col from '../components/content/Col';
 import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
@@ -27,6 +28,8 @@ const BlogPage = (props) => {
       <Page>
         <Section fullWidth={isMobileOnly}>
           <PageTitle title="Blog" />
+
+          {/* <CategoriesList /> */}
 
           <Row>
             {postList.edges.map(({ node }, index) => (
