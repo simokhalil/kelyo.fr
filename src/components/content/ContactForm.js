@@ -255,7 +255,7 @@ class ContactForm extends Component {
 
                 <Dialog
                     open={isSendSuccess}
-                    onClose={handleClose}
+                    onClose={() => this.setState({ isSendSuccess: false })}
                     aria-labelledby="alert-dialog-title"
                     aria-describedby="alert-dialog-description"
                 >
