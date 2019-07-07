@@ -20,7 +20,7 @@ const Map = ({ children, ...props }) => {
         <div className={classes.root}>
             <GoogleMapReact
                 bootstrapURLKeys={{
-                    key: 'AIzaSyCPlh6wxElx2eEzm9y93YIpXlPvXCuCfm0',
+                    key: process.env.MAPS_API_KEY,
                 }}
                 defaultZoom={12}
                 defaultCenter={props.center}
