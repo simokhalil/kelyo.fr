@@ -7,7 +7,6 @@ const useStyles = makeStyles({
         display: 'block',
         maxWidth: '750px',
         margin: '20px auto 0 auto',
-        color: '#9eabb3',
         fontSize: '.8rem',
         textAlign: 'center',
         height: 'auto',
