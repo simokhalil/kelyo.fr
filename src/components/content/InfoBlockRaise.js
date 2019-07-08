@@ -50,13 +50,8 @@ const InfoBlockRaise = ({ icon, label }) => {
 }
 
 InfoBlockRaise.prototype = {
-    fontawesome: PropTypes.bool,
     icon: PropTypes.string,
     label: PropTypes.string,
-};
-
-InfoBlockRaise.defaultProps = {
-    fontawesome: false,
 };
 
 export default InfoBlockRaise;

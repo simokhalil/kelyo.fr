@@ -48,7 +48,6 @@ const IndexPage = () => {
             services {
               description
               icon
-              fontawesome
               title
             }
           }

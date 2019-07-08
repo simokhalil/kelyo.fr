@@ -56,14 +56,9 @@ const InfoBlockWithIcon = ({ icon, title, text }) => {
 };
 
 InfoBlockWithIcon.propTypes = {
-    fontawesome: PropTypes.bool,
     icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     title: PropTypes.string,
     text: PropTypes.string,
-};
-
-InfoBlockWithIcon.defaultProps = {
-    fontawesome: false,
 };
 
 export default InfoBlockWithIcon;
