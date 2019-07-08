@@ -209,8 +209,8 @@
             ],
             "skillDetails": [
                 {
-                    "name": "Angular",
-                    "level": "60",
+                    "name": "React.js",
+                    "level": "90",
                     "keywords": [
                         "<KEYWORD_1>",
                         "<KEYWORD_2>",
@@ -218,8 +218,8 @@
                     ]
                 },
                 {
-                    "name": "React.js",
-                    "level": "80",
+                    "name": "Angular",
+                    "level": "70",
                     "keywords": [
                         "<KEYWORD_1>",
                         "<KEYWORD_2>",
@@ -228,7 +228,7 @@
                 },
                 {
                     "name": "HTML5",
-                    "level": "80",
+                    "level": "90",
                     "keywords": [
                         "<KEYWORD_1>",
                         "<KEYWORD_2>",
@@ -237,7 +237,7 @@
                 },
                 {
                     "name": "CSS3",
-                    "level": "80",
+                    "level": "90",
                     "keywords": [
                         "<KEYWORD_1>",
                         "<KEYWORD_2>",
@@ -255,7 +255,7 @@
             ],
             "skillDetails": [
                 {
-                    "name": "Ionic (Angular)",
+                    "name": "React Native",
                     "level": "90",
                     "keywords": [
                         "<KEYWORD_1>",
@@ -264,7 +264,7 @@
                     ]
                 },
                 {
-                    "name": "React Native",
+                    "name": "Ionic (Angular)",
                     "level": "90",
                     "keywords": [
                         "<KEYWORD_1>",
