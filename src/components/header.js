@@ -101,7 +101,11 @@ const Header = ({ siteTitle, ...props }) => {
           </div>
         </div>
 
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="menu-toggle">
+        <button
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-label="menu-toggle"
+        >
           <i className="fa fa-bars" />
         </button>
       </div>

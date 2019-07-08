@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { isMobileOnly } from "react-device-detect";
+import { isMobileOnly } from 'react-device-detect';
 
 import CategoriesList from '../components/blog/sidebar/categories';
 import Col from '../components/content/Col';
@@ -13,15 +13,14 @@ import Section from '../components/content/Section';
 
 import './blog.css';
 
-const BlogPage = (props) => {
-
+const BlogPage = props => {
   const postList = props.data.allMarkdownRemark;
 
   return (
     <Layout>
       <SEO
         title="Blog"
-        pathname='/blog/'
+        pathname="/blog/"
         description="Kelyo Blog. Blog de Khalil EL ISMAILI. News tech, Tutoriaux Dév, astuces, et plein d'autres choses"
       />
 
@@ -33,14 +32,36 @@ const BlogPage = (props) => {
 
           <Row>
             {postList.edges.map(({ node }, index) => (
-              <Col key={index} xs={12} md={4} lg={6} style={{ padding: '0 1em 2em' }}>
+              <Col
+                key={index}
+                xs={12}
+                md={4}
+                lg={6}
+                style={{ padding: '0 1em 2em' }}
+              >
                 <div className="blog-item">
-                  <Link to={`/blog/${node.frontmatter.path}`} className="link" >
+                  <Link to={`/blog/${node.frontmatter.path}`} className="link">
                     <div className="image-holder">
-                      <img src={node.frontmatter.image} className="image" alt={node.frontmatter.title} />
+                      <img
+                        src={node.frontmatter.image}
+                        className="image"
+                        alt={node.frontmatter.title}
+                      />
                     </div>
-                    <div className="post-info" style={{ padding: '1em 1.4em 1.4em' }}>
-                      <span className="post-date" style={{ color: '#666', fontSize: '11px', fontWeight: '300' }}>{node.frontmatter.date}</span>
+                    <div
+                      className="post-info"
+                      style={{ padding: '1em 1.4em 1.4em' }}
+                    >
+                      <span
+                        className="post-date"
+                        style={{
+                          color: '#666',
+                          fontSize: '11px',
+                          fontWeight: '300',
+                        }}
+                      >
+                        {node.frontmatter.date}
+                      </span>
                       <h4>{node.frontmatter.title}</h4>
                       {/* <p>{node.excerpt}</p> */}
                     </div>
@@ -48,13 +69,12 @@ const BlogPage = (props) => {
                 </div>
               </Col>
             ))}
-
           </Row>
         </Section>
       </Page>
     </Layout>
-  )
-}
+  );
+};
 
 export default BlogPage;
 
@@ -74,4 +94,4 @@ export const listQuery = graphql`
       }
     }
   }
-`
+`;
