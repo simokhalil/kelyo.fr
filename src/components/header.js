@@ -85,10 +85,6 @@ const Header = ({ siteTitle, ...props }) => {
           </div>
 
           <SocialLinks profiles={profiles} />
-
-          <div className="copyrights">
-            © {new Date().getFullYear()}, Built with ReactJS
-          </div>
         </div>
       </header>
 
@@ -105,7 +101,7 @@ const Header = ({ siteTitle, ...props }) => {
           </div>
         </div>
 
-        <button className="menu-toggle" onClick={toggleMenu}>
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="menu-toggle">
           <i className="fa fa-bars" />
         </button>
       </div>

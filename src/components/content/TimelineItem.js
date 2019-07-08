@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     },
     company: {
         display: 'block',
-        color: '#aaa',
+        color: '#666',
         margin: '0 0 4px',
         fontSize: '12px',
         lineHeight: '1.45em',

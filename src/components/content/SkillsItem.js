@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         position: 'relative',
         float: 'right',
         margin: '0 0 4px',
-        color: '#aaa',
+        color: '#666',
         WebkitTransition: 'all 2s ease-in -out',
         transition: 'all 2s ease-in -out',
     },
