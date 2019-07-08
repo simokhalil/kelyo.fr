@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     fontWeight: '600',
   },
   h2: {
-    color: '#888',
+    color: '#666',
     fontSize: '14px',
     fontWeight: '300',
   },

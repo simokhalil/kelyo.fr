@@ -44,7 +44,7 @@ const SocialLinks = ({ profiles }) => {
     return (
         <div className={classes.root}>
           {profiles.map((profile, index) => (
-            <OutboundLink key={index} className={classes.link} href={profile.url} target="_blank" rel="noopener">
+            <OutboundLink key={index} className={classes.link} href={profile.url} target="_blank" rel="noopener" aria-label={profile.network} title={profile.network}>
               {profile.network === 'email'
                 ? <FontAwesomeIcon icon={['far', 'envelope']} className={classes.icon} />
                 : <FontAwesomeIcon icon={['fab', profile.network]} className={classes.icon} />

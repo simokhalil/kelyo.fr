@@ -4,6 +4,8 @@ import { isMobileOnly } from "react-device-detect";
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import Footer from '../footer';
+
 const useStyles = makeStyles({
     page: {
         position: 'absolute',
@@ -30,6 +32,8 @@ const Page = ({ children }) => {
     return (
         <section className={classes.page}>
             {children}
+
+            <Footer />
         </section>
     );
 }

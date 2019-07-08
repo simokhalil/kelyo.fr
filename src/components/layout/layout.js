@@ -15,9 +15,9 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faCheckSquare, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
-import Header from "../header"
-import "./layout.css"
-import "../../styles/layout-overide.css";
+import Header from '../header';
+import './layout.css';
+import '../../styles/layout-overide.css';
 
 library.add(fab, far, fas, faCheckSquare, faMobileAlt);
 
