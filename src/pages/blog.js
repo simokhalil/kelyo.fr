@@ -40,7 +40,7 @@ const BlogPage = (props) => {
                       <img src={node.frontmatter.image} className="image" alt={node.frontmatter.title} />
                     </div>
                     <div className="post-info" style={{ padding: '1em 1.4em 1.4em' }}>
-                      <span className="post-date" style={{ color: '#888', fontSize: '11px', fontWeight: '300' }}>{node.frontmatter.date}</span>
+                      <span className="post-date" style={{ color: '#666', fontSize: '11px', fontWeight: '300' }}>{node.frontmatter.date}</span>
                       <h4>{node.frontmatter.title}</h4>
                       {/* <p>{node.excerpt}</p> */}
                     </div>

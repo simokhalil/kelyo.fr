@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   h2: {
     color: '#666',
     fontSize: '14px',
-    fontWeight: '300',
+    fontWeight: '400',
   },
   text: {
     textAlign: 'justify',

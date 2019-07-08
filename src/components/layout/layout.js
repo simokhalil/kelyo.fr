@@ -18,6 +18,7 @@ import { faCheckSquare, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import Header from '../header';
 import './layout.css';
 import '../../styles/layout-overide.css';
+import 'devicon/devicon.min.css';
 
 library.add(fab, far, fas, faCheckSquare, faMobileAlt);
 

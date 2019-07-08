@@ -13,9 +13,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"></link>
-
-        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"></link>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

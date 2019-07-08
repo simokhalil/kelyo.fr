@@ -24,9 +24,9 @@ const useStyles = makeStyles({
     description: {
         display: 'block',
         margin: 0,
-        color: '#888',
+        color: '#666',
         fontSize: '14px',
-        fontWeight: '300',
+        fontWeight: '400',
         textAlign: 'right',
     },
 });
