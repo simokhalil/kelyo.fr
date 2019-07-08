@@ -29,6 +29,18 @@
     transition: all .3s ease-in-out;
 }
 
+.blog-post-content {
+    text-align: justify;
+}
+
+.blog-post-content blockquote {
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-size: 1em;
+    border-left: 2px solid #d8d8d8;
+    font-style: italic;
+}
+
 @media only screen and (max-width: 991px) {
     .container {
         width: 100%;
