@@ -23,9 +23,9 @@ const useStyles = makeStyles({
     fontWeight: '600',
   },
   h2: {
-    color: '#888',
+    color: '#666',
     fontSize: '14px',
-    fontWeight: '300',
+    fontWeight: '400',
   },
   text: {
     textAlign: 'justify',
@@ -48,7 +48,6 @@ const IndexPage = () => {
             services {
               description
               icon
-              fontawesome
               title
             }
           }
@@ -114,7 +113,6 @@ const IndexPage = () => {
                     {services.map((service, serviceIndex) => (
                       <InfoBlockWithIcon
                         key={serviceIndex}
-                        fontawesome={service.fontawesome}
                         icon={service.icon}
                         title={service.title}
                         text={service.description}

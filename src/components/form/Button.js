@@ -28,10 +28,10 @@ const useStyles = makeStyles({
         '&[disabled]': {
             border: '2px solid #ccc',
             backgroundColor: '#eee',
-            color: '#888',
+            color: '#666',
             '&:hover': {
                 backgroundColor: '#eee',
-                color: '#888',
+                color: '#666',
             }
         }
     },

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -38,18 +38,13 @@ const useStyles = makeStyles({
     },
 });
 
-const InfoBlockWithIcon = ({ icon, fontawesome, title, text }) => {
+const InfoBlockWithIcon = ({ icon, title, text }) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
             <div className={classes.iconWrapper}>
-                {fontawesome && (
-                    <Icon className={`${icon} ${classes.icon}`} />
-                )}
-                {!fontawesome && (
-                    <Icon className={classes.icon}>{icon}</Icon>
-                )}
+                <FontAwesomeIcon icon={icon} className={classes.icon} />
             </div>
 
             <div className={classes.textWrapper}>
@@ -61,14 +56,9 @@ const InfoBlockWithIcon = ({ icon, fontawesome, title, text }) => {
 };
 
 InfoBlockWithIcon.propTypes = {
-    fontawesome: PropTypes.bool,
-    icon: PropTypes.string,
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     title: PropTypes.string,
     text: PropTypes.string,
-};
-
-InfoBlockWithIcon.defaultProps = {
-    fontawesome: false,
 };
 
 export default InfoBlockWithIcon;

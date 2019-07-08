@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   h1: {
     fontSize: '72px',
     lineHeight: '72px',
-    fontWeight: '500',
+    fontWeight: '600',
     color: '#ccc',
   },
 });

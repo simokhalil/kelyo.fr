@@ -252,17 +252,6 @@ class ContactForm extends Component {
                     </Col>
                 </Row>
 
-                {/* <Row>
-                    <Col>
-                        <ReCAPTCHA
-                            ref={this.recaptchaRef}
-                            size="invisible"
-                            sitekey="6LdDQ6oUAAAAAF43HHZnpgbYng3XzAwY9cRnyywE"
-                            onChange={this.handleSubmit}
-                        />
-                    </Col>
-                </Row> */}
-
                 <Row>
                     <Col>
                         <Button type="submit" disabled={isLoading}>

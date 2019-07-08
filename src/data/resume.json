@@ -43,29 +43,25 @@
         "services": [
             [
                 {
-                    "icon": "fa fa-mobile-alt",
-                    "fontawesome": true,
+                    "icon": ["fas", "mobile-alt"],
                     "title": "Développement Mobile",
                     "description": "React Native, NativeScript, Ionic... le développement mobile multi-plateformes permet d'offrir à l'utilisateur un rendu et une fluidité natifs pour un coût maîtrisé, en adressant différentes plateformes (Android, iOS) avec la même base de code. Je serais ravi de faire partie de votre aventure."
                 },
                 {
-                    "icon": "fab fa-chrome",
-                    "fontawesome": true,
+                    "icon": ["fab", "chrome"],
                     "title": "Développement Front-end",
                     "description": "React, Angular, Vue... je suis en mesure de vous accompagner sur tous vos projets de développement Web JAMStack (aka architectures décentralisées), pour créer des applications modernes, pour tous les besoins et quel que soit le domaine d'activité."
                 }
             ],
             [
                 {
-                    "icon": "fab fa-node-js",
-                    "fontawesome": true,
+                    "icon": ["fab", "node-js"],
                     "title": "Développement Back-end",
                     "description": "Toute application JAMStack a besoin d'une API pour fonctionner. Et quoi de mieux que le couple NodeJS et sa gestion asynchrones des évènements pour implémenter des Web-Services modernes, performants, évolutifs et scalables ?"
                 },
                 {
-                    "icon": "people_outline",
-                    "fontawesome": false,
-                    "title": "Développement Mobile",
+                    "icon": ["fas", "users"],
+                    "title": "Encadrement technique",
                     "description": "Vous avez besoin d'un Lead-Developpeur pour votre équipe ? De l'accompagnement à la revue de code, en passant par la formation et la montée en compétences ou encore la mise en place de socles techniques et l'intégration de forges logicielles, c'est dans mes cordes !"
                 }
             ]
