@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import firebase from "firebase/app";
 import { isMobileOnly } from 'react-device-detect';
 
-import { CircularProgress, TextField, withStyles } from '@material-ui/core';
+import {
+    CircularProgress,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    TextField,
+    withStyles,
+} from '@material-ui/core';
 
 import Button from '../form/Button';
 import Col from './Col';
@@ -32,9 +40,6 @@ const styles = {
             visibility: 'visible',
         }
     },
-    success: {
-        backgroundColor: '#b6e8c6',
-    },
 };
 
 const firebaseConfig = {
@@ -50,6 +55,7 @@ const errorMessages = {
 
 class ContactForm extends Component {
     recaptchaRef = React.createRef();
+    formRef = React.createRef();
     state = {
         values: {
             name: '',
@@ -68,6 +74,12 @@ class ContactForm extends Component {
         }
     }
 
+    encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&")
+    };
+
     handleChange = (event) => {
         const { values } = this.state;
 
@@ -79,31 +91,54 @@ class ContactForm extends Component {
         });
     };
 
+    ValidateFormFields = () => {
+        const { values: { name, email, subject, message } } = this.state;
+        const errors = {};
+
+        if (!name || !name.length) {
+            errors.name = 'REQUIRED';
+        }
+        if (!email || !email.length) {
+            errors.email = 'REQUIRED';
+        }
+        if (!subject || !subject.length) {
+            errors.subject = 'REQUIRED';
+        }
+        if (!message || !message.length) {
+            errors.message = 'REQUIRED';
+        }
+
+        this.setState({ errors });
+
+        return Object.keys(errors).length === 0;
+    };
+
     onSubmit = (event) => {
         event.preventDefault();
 
-        this.setState({ isLoading: true });
+        const isFormValid = this.ValidateFormFields();
 
-        const recaptchaValue = this.recaptchaRef.current.getValue();
-
-        console.log('recaptchaValue', recaptchaValue);
-
-        if (!recaptchaValue || !recaptchaValue.length) {
-            this.recaptchaRef.current.execute();
-        } else {
-            this.handleSubmit();
+        if (!isFormValid) {
+            return;
         }
-    };
 
-    handleSubmit = () => {
-        console.log('submitting form...');
         const { values } = this.state;
+        const form = this.formRef.current;
 
-        this.setState({ errors: {} });
+        this.setState({
+            isLoading: true,
+            errors: {},
+        });
 
-        const data = { ...values, time: Date.now() };
+        const data = this.encode({
+            'form-name': form.getAttribute('name'),
+            time: Date.now(),
+            ...values,
+        });
 
-        axios.post("https://europe-west1-kelyo-e9b61.cloudfunctions.net/submitContactForm", data)
+        axios.post('/', data, {
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        })
             .then((res) => {
                 console.log('res', res);
 
@@ -115,10 +150,6 @@ class ContactForm extends Component {
                         message: '',
                     },
                     isSendSuccess: true,
-                }, () => {
-                        setTimeout(() => {
-                            this.setState({ isSendSuccess: false });
-                        }, 5000);
                 });
             })
             .catch((error) => {
@@ -137,7 +168,7 @@ class ContactForm extends Component {
                         this.setState({
                             errors: { ...newErrors },
                         }, () => {
-                                console.log('errors', this.state.errors);
+                            console.log('errors', this.state.errors);
                         });
                     }
                 }
@@ -152,11 +183,16 @@ class ContactForm extends Component {
         const { errors, isLoading, isSendSuccess, values } = this.state;
 
         return (
-            <form method="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+            <form
+                method="post"
+                name="contact"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={this.onSubmit}
+                ref={this.formRef}
+            >
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
-
-                <div className={`${classes.notification} ${classes.success} ${isSendSuccess && 'visible'}`}>Votre message a bien été envoyé</div>
 
                 <Row spacing={5}>
                     <Col xs={12} sm={6}>
@@ -234,6 +270,25 @@ class ContactForm extends Component {
                         </Button>
                     </Col>
                 </Row>
+
+                <Dialog
+                    open={isSendSuccess}
+                    onClose={() => this.setState({ isSendSuccess: false })}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">Merci !</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            J'ai bien reçu votre message, et vous en remercie. Je m'efforcerai de vous donner un retour au plus vite.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => this.setState({ isSendSuccess: false })} color="primary">
+                            OK
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </form>
         );
     }

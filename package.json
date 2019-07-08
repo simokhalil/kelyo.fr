@@ -34,7 +34,6 @@
     "react": "^16.8.6",
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
-    "react-google-recaptcha": "^1.0.5",
     "react-helmet": "^5.2.1",
     "recompose": "^0.30.0"
   },
