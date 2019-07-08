@@ -35,10 +35,7 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <SEO
-        title="Contact"
-        pathname='/contact/'
-      />
+      <SEO title="Contact" pathname="/contact/" />
 
       <Page>
         <Section>
@@ -52,26 +49,20 @@ const ContactPage = () => {
 
           <Row spacing={5}>
             <Col xs={12} sm={3}>
-              <InfoBlockRaise
-                icon={["fas", "phone"]}
-                label={basics.phone}
-              />
+              <InfoBlockRaise icon={['fas', 'phone']} label={basics.phone} />
             </Col>
             <Col xs={12} sm={3}>
               <InfoBlockRaise
-                icon={["fas", "map-marker-alt"]}
+                icon={['fas', 'map-marker-alt']}
                 label={basics.location.city}
               />
             </Col>
             <Col xs={12} sm={3}>
-              <InfoBlockRaise
-                icon={["far", "envelope"]}
-                label={basics.email}
-              />
+              <InfoBlockRaise icon={['far', 'envelope']} label={basics.email} />
             </Col>
             <Col xs={12} sm={3}>
               <InfoBlockRaise
-                icon={["far", "check-circle"]}
+                icon={['far', 'check-circle']}
                 label="Dispo en freelance"
               />
             </Col>
