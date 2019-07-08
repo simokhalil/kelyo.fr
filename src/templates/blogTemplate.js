@@ -7,6 +7,8 @@ import PageTitle from '../components/content/PageTitle';
 import SEO from '../components/seo';
 import Section from '../components/content/Section';
 
+import '../pages/blog.css';
+
 const Template = ({ data: { markdownRemark } }) => {
   const { frontmatter, excerpt, html } = markdownRemark;
 
@@ -19,10 +21,11 @@ const Template = ({ data: { markdownRemark } }) => {
       />
 
       <Page>
-        <Section>
+        <img src={frontmatter.image} style={{ width: '100%' }} />
+        <Section style={{ marginTop: '-50px', width: '95%', minWidth: '95%' }}>
           <PageTitle title={frontmatter.title} description={frontmatter.date} />
 
-          <div className="blog-post-container">
+          <div className="container">
             <div className="blog-post">
               <div
                 className="blog-post-content"
@@ -47,6 +50,7 @@ export const pageQuery = graphql`
         date(formatString: "Do MMMM YYYY", locale: "fr")
         path
         title
+        image
       }
     }
   }

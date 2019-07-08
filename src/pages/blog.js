@@ -30,46 +30,48 @@ const BlogPage = props => {
 
           {/* <CategoriesList /> */}
 
-          <Row>
-            {postList.edges.map(({ node }, index) => (
-              <Col
-                key={index}
-                xs={12}
-                md={4}
-                lg={6}
-                style={{ padding: '0 1em 2em' }}
-              >
-                <div className="blog-item">
-                  <Link to={`/blog/${node.frontmatter.path}`} className="link">
-                    <div className="image-holder">
-                      <img
-                        src={node.frontmatter.image}
-                        className="image"
-                        alt={node.frontmatter.title}
-                      />
-                    </div>
-                    <div
-                      className="post-info"
-                      style={{ padding: '1em 1.4em 1.4em' }}
-                    >
-                      <span
-                        className="post-date"
-                        style={{
-                          color: '#666',
-                          fontSize: '11px',
-                          fontWeight: '300',
-                        }}
+          <div className="container">
+            <Row>
+              {postList.edges.map(({ node }, index) => (
+                <Col
+                  key={index}
+                  xs={12}
+                  md={4}
+                  lg={6}
+                  style={{ padding: '0 1em 2em' }}
+                >
+                  <div className="blog-item">
+                    <Link to={`/blog/${node.frontmatter.path}`} className="link">
+                      <div className="image-holder">
+                        <img
+                          src={node.frontmatter.image}
+                          className="image"
+                          alt={node.frontmatter.title}
+                        />
+                      </div>
+                      <div
+                        className="post-info"
+                        style={{ padding: '1em 1.4em 1.4em' }}
                       >
-                        {node.frontmatter.date}
-                      </span>
-                      <h4>{node.frontmatter.title}</h4>
-                      {/* <p>{node.excerpt}</p> */}
-                    </div>
-                  </Link>
-                </div>
-              </Col>
-            ))}
-          </Row>
+                        <span
+                          className="post-date"
+                          style={{
+                            color: '#666',
+                            fontSize: '11px',
+                            fontWeight: '300',
+                          }}
+                        >
+                          {node.frontmatter.date}
+                        </span>
+                        <h4>{node.frontmatter.title}</h4>
+                        {/* <p>{node.excerpt}</p> */}
+                      </div>
+                    </Link>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </div>
         </Section>
       </Page>
     </Layout>
