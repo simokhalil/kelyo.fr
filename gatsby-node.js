@@ -28,6 +28,10 @@ exports.createPages = async ({ actions, graphql }) => {
 
   console.log('pages', JSON.stringify(pages.data));
 
+  if (!pages.data) {
+    return;
+  }
+
   pages.data.posts.edges.forEach(({ node }) => {
     createPage({
       path: `blog/${node.frontmatter.path}`,
