@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Khalil EL ISMAILI`,
-    description: `Consultant Javascript, ReactJS, Angular, VueJS NodeJS`,
+    description: `Développeur Web et Mobile multi-platefomes, je suis consultant sur les nouvelles technos (Javascript, ReactJS / React Native, Angular, NodeJS) sur Nantes et alentours`,
     author: `Khalil EL ISMAILI`,
     siteUrl: `https://www.kelyo.fr`,
   },
