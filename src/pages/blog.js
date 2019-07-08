@@ -1,5 +1,7 @@
 import React from 'react';
+import { CommentCount } from 'gatsby-plugin-disqus';
 import { Link, graphql } from 'gatsby';
+import { globalHistory } from '@reach/router';
 import { isMobileOnly } from 'react-device-detect';
 
 import CategoriesList from '../components/blog/sidebar/categories';
@@ -14,7 +16,9 @@ import Section from '../components/content/Section';
 import './blog.css';
 
 const BlogPage = props => {
-  const postList = props.data.allMarkdownRemark;
+  console.log(props.data);
+
+  const { postList, config } = props.data;
 
   return (
     <Layout>
@@ -53,15 +57,17 @@ const BlogPage = props => {
                         className="post-info"
                         style={{ padding: '1em 1.4em 1.4em' }}
                       >
-                        <span
-                          className="post-date"
-                          style={{
-                            color: '#666',
-                            fontSize: '11px',
-                            fontWeight: '300',
-                          }}
-                        >
+                        <span className="blog-item-meta date">
                           {node.frontmatter.date}
+                        </span>
+                        <span className="blog-item-meta comments">
+                          <CommentCount
+                            config={{
+                              url: `${config.siteMetadata.siteUrl}/blog/${node.frontmatter.path}`,
+                              identifier: node.id,
+                              title: node.frontmatter.title,
+                            }}
+                            placeholder={'...'} />
                         </span>
                         <h4>{node.frontmatter.title}</h4>
                         {/* <p>{node.excerpt}</p> */}
@@ -82,10 +88,11 @@ export default BlogPage;
 
 export const listQuery = graphql`
   query BlogListQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    postList: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 250)
+          id
           frontmatter {
             path
             date(formatString: "Do MMMM YYYY", locale: "fr")
@@ -93,6 +100,12 @@ export const listQuery = graphql`
             image
           }
         }
+      }
+    }
+    config: site {
+      siteMetadata {
+        siteUrl
+        author
       }
     }
   }

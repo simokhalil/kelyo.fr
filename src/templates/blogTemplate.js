@@ -13,8 +13,6 @@ import '../pages/blog.css';
 
 const Template = ({ data }) => {
 
-  console.log(data);
-
   const { post, config } = data;
 
   const { id, frontmatter, excerpt, html } = post;
@@ -45,11 +43,33 @@ const Template = ({ data }) => {
                 dangerouslySetInnerHTML={{ __html: html }}
               />
             </div>
+          </div>
 
+          <div className="container">
+            <div className="post-meta">
+              <div className="info">
+                <span className="date">
+                  {frontmatter.date}
+                </span>
+                <span className="author">
+                  {config.siteMetadata.author}
+                </span>
+              </div>
+            </div>
+            <div className="post-tags">
+              <div className="tags">
+                {frontmatter.tags.map((tag, index) => (
+                  <a href="#" key={index} className="tag">{tag}</a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="container">
             <CommentCount config={disqusConfig} placeholder={'...'} />
             <Disqus config={disqusConfig} />
-
           </div>
+
         </Section>
       </Page>
     </Layout>
@@ -76,6 +96,7 @@ export const pageQuery = graphql`
     config: site {
       siteMetadata {
         siteUrl
+        author
       }
     }
   }
