@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { globalHistory } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -106,7 +107,7 @@ const Header = ({ siteTitle, ...props }) => {
           onClick={toggleMenu}
           aria-label="menu-toggle"
         >
-          <i className="fa fa-bars" />
+          <FontAwesomeIcon icon={["fas", "bars"]} />
         </button>
       </div>
     </>

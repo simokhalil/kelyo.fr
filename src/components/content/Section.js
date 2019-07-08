@@ -11,6 +11,7 @@ const useStyles = makeStyles({
         width: '100%',
         minWidth: '100%',
         // minHeight: '100%',
+        margin: 'auto',
         padding: isMobile ? '25px 30px 60px' : '50px 70px 70px',
         backgroundColor: '#fff',
         WebkitTransform: 'translate3d(0, 0, 0)',
@@ -22,11 +23,11 @@ const useStyles = makeStyles({
     },
 });
 
-const Section = ({ children, fullWidth }) => {
+const Section = ({ children, fullWidth, ...props }) => {
     const classes = useStyles();
 
     return (
-        <div className={`${classes.section} ${fullWidth && classes.fullWidth}`}>
+        <div className={`${classes.section} ${fullWidth && classes.fullWidth}`} {...props}>
             {children}
         </div>
     );
