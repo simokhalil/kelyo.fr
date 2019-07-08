@@ -1,8 +1,9 @@
 import GoogleMapReact from 'google-map-react';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { isMobile } from 'react-device-detect';
 
-import { Icon, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 const mapStyles = require("./map-style.json");
 
@@ -28,8 +29,8 @@ const Map = ({ children, ...props }) => {
                 yesIWantToUseGoogleMapApiInternals
                 {...props}
             >
-                <Icon
-                    className="fas fa-map-marker-alt"
+                <FontAwesomeIcon
+                    icon={["fas", "map-marker-alt"]}
                     lat={props.center.lat}
                     lng={props.center.lng}
                     style={{ fontSize: '40px', color: '#0099e5' }}

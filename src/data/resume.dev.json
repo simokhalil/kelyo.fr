@@ -43,29 +43,25 @@
         "services": [
             [
                 {
-                    "icon": "fa fa-mobile-alt",
-                    "fontawesome": true,
+                    "icon": ["fa fa-mobile-alt"],
                     "title": "Développement Mobile",
                     "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
                 },
                 {
-                    "icon": "fab fa-chrome",
-                    "fontawesome": true,
+                    "icon": ["fab fa-chrome"],
                     "title": "Développement Front-end",
                     "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
                 }
             ],
             [
                 {
-                    "icon": "fab fa-node-js",
-                    "fontawesome": true,
+                    "icon": ["fab fa-node-js"],
                     "title": "Développement Back-end",
                     "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
                 },
                 {
-                    "icon": "people_outline",
-                    "fontawesome": false,
-                    "title": "Développement Mobile",
+                    "icon": ["fas", "users"],
+                    "title": "Encadrement technique",
                     "description": "Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales odio."
                 }
             ]

@@ -26,8 +26,6 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
-  console.log('pages', JSON.stringify(pages.data));
-
   if (!pages.data) {
     return;
   }

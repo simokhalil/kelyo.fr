@@ -114,7 +114,6 @@ const IndexPage = () => {
                     {services.map((service, serviceIndex) => (
                       <InfoBlockWithIcon
                         key={serviceIndex}
-                        fontawesome={service.fontawesome}
                         icon={service.icon}
                         title={service.title}
                         text={service.description}

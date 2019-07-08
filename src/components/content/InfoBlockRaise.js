@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -37,17 +37,12 @@ const useStyles = makeStyles({
     },
 });
 
-const InfoBlockRaise = ({ icon, fontawesome, label }) => {
+const InfoBlockRaise = ({ icon, label }) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            {fontawesome && (
-                <Icon className={`${icon} ${classes.icon}`} />
-            )}
-            {!fontawesome && (
-                <Icon className={classes.icon}>{icon}</Icon>
-            )}
+            <FontAwesomeIcon icon={icon} className={classes.icon} />
 
             <h4 className={classes.label}>{label}</h4>
         </div>

@@ -53,29 +53,25 @@ const ContactPage = () => {
           <Row spacing={5}>
             <Col xs={12} sm={3}>
               <InfoBlockRaise
-                fontawesome
-                icon="fas fa-phone"
+                icon={["fas", "phone"]}
                 label={basics.phone}
               />
             </Col>
             <Col xs={12} sm={3}>
               <InfoBlockRaise
-                fontawesome
-                icon="fas fa-map-marker-alt"
+                icon={["fas", "map-marker-alt"]}
                 label={basics.location.city}
               />
             </Col>
             <Col xs={12} sm={3}>
               <InfoBlockRaise
-                fontawesome
-                icon="far fa-envelope"
+                icon={["far", "envelope"]}
                 label={basics.email}
               />
             </Col>
             <Col xs={12} sm={3}>
               <InfoBlockRaise
-                fontawesome
-                icon="far fa-check-circle"
+                icon={["far", "check-circle"]}
                 label="Dispo en freelance"
               />
             </Col>
