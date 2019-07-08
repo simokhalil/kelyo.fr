@@ -41,8 +41,14 @@ Hac ex causa conlaticia stipe Valerius humatur ille Publicola et subsidiis amico
 
 > Ceci est une citation
 
-`console.log('ligne de code rapide');`
-
+Ligne de code :
+```js
+  console.log('ligne de code rapide');
 ```
-// Un block de codeconsole.log('test');
+
+Un bloc de code :
+
+```js
+// Un block de code
+console.log('test');
 ```
