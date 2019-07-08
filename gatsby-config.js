@@ -7,7 +7,7 @@ module.exports = {
     title: `Khalil EL ISMAILI`,
     description: `Consultant Javascript, ReactJS, Angular, VueJS NodeJS`,
     author: `Khalil EL ISMAILI`,
-    siteUrl: `https://kelyo.fr`,
+    siteUrl: `https://www.kelyo.fr`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -97,6 +97,12 @@ module.exports = {
         name: `blog`,
         path: `${__dirname}/blog`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `kelyo`
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

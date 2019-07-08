@@ -1,4 +1,6 @@
 import React from 'react';
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+import { globalHistory } from '@reach/router';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout/layout';
@@ -9,8 +11,19 @@ import Section from '../components/content/Section';
 
 import '../pages/blog.css';
 
-const Template = ({ data: { markdownRemark } }) => {
-  const { frontmatter, excerpt, html } = markdownRemark;
+const Template = ({ data }) => {
+
+  console.log(data);
+
+  const { post, config } = data;
+
+  const { id, frontmatter, excerpt, html } = post;
+
+  let disqusConfig = {
+    url: `${config.siteMetadata.siteUrl + globalHistory.location.pathname}`,
+    identifier: id,
+    title: frontmatter.title,
+  }
 
   return (
     <Layout>
@@ -21,7 +34,7 @@ const Template = ({ data: { markdownRemark } }) => {
       />
 
       <Page>
-        <img src={frontmatter.image} style={{ width: '100%' }} />
+        <img src={frontmatter.image} style={{ width: '100%' }} alt={frontmatter.title} />
         <Section style={{ marginTop: '-50px', width: '95%', minWidth: '95%' }}>
           <PageTitle title={frontmatter.title} description={frontmatter.date} />
 
@@ -32,6 +45,10 @@ const Template = ({ data: { markdownRemark } }) => {
                 dangerouslySetInnerHTML={{ __html: html }}
               />
             </div>
+
+            <CommentCount config={disqusConfig} placeholder={'...'} />
+            <Disqus config={disqusConfig} />
+
           </div>
         </Section>
       </Page>
@@ -43,14 +60,22 @@ export default Template;
 
 export const pageQuery = graphql`
   query BlogPostQuery($uid: String!) {
-    markdownRemark(frontmatter: { path: { eq: $uid } }) {
+    post: markdownRemark(frontmatter: { path: { eq: $uid } }) {
+      id
       html
-      excerpt(pruneLength: 250)
       frontmatter {
-        date(formatString: "Do MMMM YYYY", locale: "fr")
         path
-        title
         image
+        categories
+        date(formatString: "DD MMMM YYYY", locale: "fr")
+        keywords
+        tags
+        title
+      }
+    }
+    config: site {
+      siteMetadata {
+        siteUrl
       }
     }
   }
