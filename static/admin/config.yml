@@ -9,8 +9,8 @@ media_folder: "static/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: blog
-    label: Blog
+  - name: posts
+    label: Posts
     slug: "{{slug}}"
     folder: blog
     create: true
