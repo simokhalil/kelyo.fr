@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const TagsList = () => {
@@ -24,7 +25,7 @@ const TagsList = () => {
 
       <ul>
         {tags.map((tag, index) => (
-          <li key={index}><a href={`/blog/tags/${tag.node.frontmatter.title}`}>{tag.node.frontmatter.title}</a></li>
+          <li key={index}><Link to={`/blog/tags/${tag.node.frontmatter.title}`} rel={tag.node.frontmatter.title}>{tag.node.frontmatter.title}</Link></li>
         ))}
       </ul>
     </div>
