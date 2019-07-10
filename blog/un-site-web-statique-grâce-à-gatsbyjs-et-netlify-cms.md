@@ -6,11 +6,11 @@ categories:
   - React
   - JAMStack
 tags:
-  - infos
-  - tech
-  - gatsby
   - JAMStack
-  - react
+  - Tech
+  - React
+  - Infos
+  - Gatsby
 keywords:
   - dev
   - tuto
