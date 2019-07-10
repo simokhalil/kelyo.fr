@@ -16,7 +16,7 @@ slug:
 collections:
   - name: posts
     label: Posts
-    slug: "{{year}}-{{month}}-{{slug}}"
+    slug: "{{slug}}"
     folder: "blog/posts"
     create: true
     fields:

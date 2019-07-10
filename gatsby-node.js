@@ -17,6 +17,9 @@ exports.createPages = async ({ actions, graphql }) => {
             fields {
               slug
             }
+            frontmatter {
+              date
+            }
           }
         }
       }
@@ -34,8 +37,13 @@ exports.createPages = async ({ actions, graphql }) => {
   }
 
   pages.data.posts.edges.forEach(({ node }) => {
+
+    const nodeDate = new Date(node.frontmatter.date);
+    const year = nodeDate.getFullYear();
+    const month = `0${nodeDate.getMonth() + 1}`.slice(-2);
+
     createPage({
-      path: `blog/${node.fields.slug}`,
+      path: `blog/${year}/${month}/${node.fields.slug}`,
       component: blogPostTemplate,
       context: {
         uid: node.fields.slug,
