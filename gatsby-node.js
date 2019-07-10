@@ -1,5 +1,6 @@
 const path = require(`path`);
 const _ = require('lodash');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -8,12 +9,13 @@ exports.createPages = async ({ actions, graphql }) => {
     {
       posts: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
+        filter: {fields: {collection: {eq: "posts"}}}
         limit: 1000
       ) {
         edges {
           node {
-            frontmatter {
-              path
+            fields {
+              slug
             }
           }
         }
@@ -33,10 +35,10 @@ exports.createPages = async ({ actions, graphql }) => {
 
   pages.data.posts.edges.forEach(({ node }) => {
     createPage({
-      path: `blog/${node.frontmatter.path}`,
+      path: `blog/${node.fields.slug}`,
       component: blogPostTemplate,
       context: {
-        uid: node.frontmatter.path,
+        uid: node.fields.slug,
       },
     });
   });
@@ -57,6 +59,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators
 
   if (_.get(node, 'internal.type') === `MarkdownRemark`) {
+
     // Get the parent node
     const parent = getNode(_.get(node, 'parent'))
 
@@ -68,6 +71,16 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       node,
       name: 'collection',
       value: _.get(parent, 'sourceInstanceName'),
+    });
+
+    // Get node's slug
+    const slug = createFilePath({ node, getNode });
+
+    // Create a field with slug value
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug.replace(/\//g, ''),
     });
   }
 }

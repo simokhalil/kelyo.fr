@@ -4,13 +4,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 const CategoriesList = () => {
   const data = useStaticQuery(graphql`
     query CategoriesListQuery {
-      query MyQuery {
-        allMarkdownRemark(filter: {fields: {collection: {eq: "categories"}}}) {
-          edges {
-            node {
-              frontmatter {
-                title
-              }
+      allMarkdownRemark(filter: {fields: {collection: {eq: "categories"}}}) {
+        edges {
+          node {
+            frontmatter {
+              title
             }
           }
         }
@@ -18,14 +16,18 @@ const CategoriesList = () => {
     }
   `);
 
-  const categories = data.allFile.edges;
+  const categories = data.allMarkdownRemark.edges;
 
   return (
-    <ul>
-      {categories.map((category, index) => (
-        <li key={index}><a href={`/blog/categories/${category.node.childMarkdownRemark.frontmatter.title}`}>{category.node.childMarkdownRemark.frontmatter.title}</a></li>
-      ))}
-    </ul>
+    <div>
+      <h3>Catégories</h3>
+
+      <ul>
+        {categories.map((category, index) => (
+          <li key={index}><a href={`/blog/categories/${category.node.frontmatter.title}`}>{category.node.frontmatter.title}</a></li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

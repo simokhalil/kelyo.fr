@@ -1,7 +1,6 @@
 import React from 'react';
 import { CommentCount } from 'gatsby-plugin-disqus';
 import { Link, graphql } from 'gatsby';
-import { globalHistory } from '@reach/router';
 import { isMobileOnly } from 'react-device-detect';
 
 import CategoriesList from '../components/blog/sidebar/categories';
@@ -12,6 +11,7 @@ import PageTitle from '../components/content/PageTitle';
 import Row from '../components/content/Row';
 import SEO from '../components/seo';
 import Section from '../components/content/Section';
+import TagsList from '../components/blog/sidebar/tags';
 
 import './blog.css';
 
@@ -33,6 +33,7 @@ const BlogPage = props => {
           <PageTitle title="Blog" />
 
           <CategoriesList />
+          <TagsList />
 
           <div className="container">
             <Row>
@@ -45,7 +46,7 @@ const BlogPage = props => {
                   style={{ padding: '0 1em 2em' }}
                 >
                   <div className="blog-item">
-                    <Link to={`/blog/${node.frontmatter.path}`} className="link">
+                    <Link to={`/blog/${node.fields.slug}`} className="link">
                       <div className="image-holder">
                         <img
                           src={node.frontmatter.image}
@@ -63,7 +64,7 @@ const BlogPage = props => {
                         <span className="blog-item-meta comments">
                           <CommentCount
                             config={{
-                              url: `${config.siteMetadata.siteUrl}/blog/${node.frontmatter.path}`,
+                              url: `${config.siteMetadata.siteUrl}/blog/${node.fields.slug}`,
                               identifier: node.id,
                               title: node.frontmatter.title,
                             }}
@@ -88,13 +89,18 @@ export default BlogPage;
 
 export const listQuery = graphql`
   query BlogListQuery {
-    postList: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    postList: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {fields: {collection: {eq: "posts"}}}
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
+          fields {
+            slug
+          }
           frontmatter {
-            path
             date(formatString: "Do MMMM YYYY", locale: "fr")
             title
             image

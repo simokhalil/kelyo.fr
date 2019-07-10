@@ -15,7 +15,7 @@ const Template = ({ data }) => {
 
   const { post, config } = data;
 
-  const { id, frontmatter, excerpt, html } = post;
+  const { id, frontmatter, fields, excerpt, html } = post;
 
   let disqusConfig = {
     url: `${config.siteMetadata.siteUrl + globalHistory.location.pathname}`,
@@ -27,7 +27,7 @@ const Template = ({ data }) => {
     <Layout>
       <SEO
         title={frontmatter.title}
-        pathname={`/blog/${frontmatter.path}`}
+        pathname={`/blog/${fields.slug}`}
         description={excerpt}
       />
 
@@ -80,11 +80,13 @@ export default Template;
 
 export const pageQuery = graphql`
   query BlogPostQuery($uid: String!) {
-    post: markdownRemark(frontmatter: { path: { eq: $uid } }) {
+    post: markdownRemark(fields: { slug: { eq: $uid } }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
-        path
         image
         categories
         date(formatString: "DD MMMM YYYY", locale: "fr")

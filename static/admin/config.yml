@@ -8,15 +8,19 @@ backend:
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
+
 collections:
   - name: posts
     label: Posts
-    slug: "{{slug}}"
-    folder: blog
+    slug: "{{year}}-{{month}}-{{slug}}"
+    folder: "blog/posts"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Path", name: "path" }
       - { label: "Date", name: "date", widget: "date" }
       - { label: "Categories", name: "categories", widget: "relation", collection: "categories", multiple: true, searchFields: ["title"], valueField: "title", displayFields: ["title"] }
       - { label: "Tags", name: "tags", widget: "relation", collection: "tags", multiple: true, searchFields: ["title"], valueField: "title", displayFields: ["title"] }
