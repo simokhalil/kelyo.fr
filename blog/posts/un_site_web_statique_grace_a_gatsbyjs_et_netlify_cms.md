@@ -20,7 +20,7 @@ keywords:
   - jamstack
   - statique
   - headless
-image: /images/uploads/undraw_online_page_cq94.png
+image: /images/uploads/un_site_web_statique_grace_a_gatsbyjs_et_netlify_cms.jpg
 ---
 
 Hello World !
