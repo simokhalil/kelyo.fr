@@ -15,11 +15,29 @@ collections:
     folder: blog
     create: true
     fields:
-      - { label: 'Title', name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Path", name: "path" }
       - { label: "Date", name: "date", widget: "date" }
-      - { label: "Categories", name: "categories", widget: "list" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Categories", name: "categories", widget: "relation", collection: "categories", multiple: true, searchFields: ["title"], valueField: "title", displayFields: ["title"] }
+      - { label: "Tags", name: "tags", widget: "relation", collection: "tags", multiple: true, searchFields: ["title"], valueField: "title", displayFields: ["title"] }
       - { label: "Keywords", name: "keywords", widget: "list" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: categories
+    label: Categories
+    folder: "blog/categories"
+    create: true
+    fields:
+      - label: "Name"
+        name: "title"
+        wisget: "string"
+
+  - name: tags
+    label: Tags
+    folder: "blog/tags"
+    create: true
+    fields:
+      - label: "Name"
+        name: "title"
+        wisget: "string"

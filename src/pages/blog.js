@@ -32,7 +32,7 @@ const BlogPage = props => {
         <Section fullWidth={isMobileOnly}>
           <PageTitle title="Blog" />
 
-          {/* <CategoriesList /> */}
+          <CategoriesList />
 
           <div className="container">
             <Row>
