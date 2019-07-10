@@ -3,7 +3,6 @@ title: Un site web statique grâce à GatsbyJS et Netlify CMS
 path: un-site-web-statique-grace-a-gatsbyjs-et-netlify-cms
 date: 2019-07-09T23:19:21.834Z
 categories:
-  - React
   - JAMStack
 tags:
   - JAMStack
