@@ -20,7 +20,7 @@ keywords:
   - jamstack
   - statique
   - headless
-image: /images/uploads/blog1.jpg
+image: /images/uploads/undraw_online_friends_x73e.png
 ---
 
 Hello World !
