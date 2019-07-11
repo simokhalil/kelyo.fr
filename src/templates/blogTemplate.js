@@ -1,7 +1,7 @@
 import React from 'react';
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+import { Link, graphql } from 'gatsby';
 import { globalHistory } from '@reach/router';
-import { graphql } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
@@ -9,13 +9,13 @@ import PageTitle from '../components/content/PageTitle';
 import SEO from '../components/seo';
 import Section from '../components/content/Section';
 
-import '../pages/blog.css';
+import '../styles/blog.css';
 
 const Template = ({ data }) => {
 
   const { post, config } = data;
 
-  const { id, frontmatter, excerpt, html } = post;
+  const { id, frontmatter, fields, excerpt, html } = post;
 
   let disqusConfig = {
     url: `${config.siteMetadata.siteUrl + globalHistory.location.pathname}`,
@@ -27,7 +27,7 @@ const Template = ({ data }) => {
     <Layout>
       <SEO
         title={frontmatter.title}
-        pathname={`/blog/${frontmatter.path}`}
+        pathname={`/blog/${fields.slug}`}
         description={excerpt}
       />
 
@@ -59,7 +59,7 @@ const Template = ({ data }) => {
             <div className="post-tags">
               <div className="tags">
                 {frontmatter.tags.map((tag, index) => (
-                  <a href="#" key={index} className="tag">{tag}</a>
+                  <Link to={`/blog/tags/${tag}`} rel={tag} key={index} className="tag">{tag}</Link>
                 ))}
               </div>
             </div>
@@ -80,11 +80,13 @@ export default Template;
 
 export const pageQuery = graphql`
   query BlogPostQuery($uid: String!) {
-    post: markdownRemark(frontmatter: { path: { eq: $uid } }) {
+    post: markdownRemark(fields: { slug: { eq: $uid } }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
-        path
         image
         categories
         date(formatString: "DD MMMM YYYY", locale: "fr")

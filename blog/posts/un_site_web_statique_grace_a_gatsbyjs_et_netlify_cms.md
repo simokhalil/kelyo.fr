@@ -1,16 +1,14 @@
 ---
 title: Un site web statique grâce à GatsbyJS et Netlify CMS
-path: un-site-web-statique-grace-a-gatsbyjs-et-netlify-cms
-date: 2019-07-09T23:19:21.834Z
+date: 2019-07-07T01:42:02.332Z
 categories:
-  - React
   - JAMStack
 tags:
-  - infos
-  - tech
-  - gatsby
+  - Tech
   - JAMStack
-  - react
+  - Infos
+  - React
+  - Gatsby
 keywords:
   - dev
   - tuto
@@ -22,8 +20,9 @@ keywords:
   - jamstack
   - statique
   - headless
-image: /images/uploads/blog1.jpg
+image: /images/uploads/un_site_web_statique_grace_a_gatsbyjs_et_netlify_cms.jpg
 ---
+
 Hello World !
 
 A l'occasion de la refonte de mon site web perso, j'ai décidé de m'offrir un blog pour vous parler de (et vous partager) ce que je fais.
