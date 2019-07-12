@@ -29,7 +29,7 @@ try {
   window.cookieconsent.initialise({
     "palette": {
       "popup": {
-        "background": "#0099e5"
+        "background": "#0672c3"
       },
       "button": {
         "background": "transparent",
