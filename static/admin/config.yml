@@ -51,7 +51,7 @@ collections:
     files:
       - label: "Privacy policy"
         name: "privacy-policy"
-        file: "content/site/privacy.yml"
+        file: "content/site/privacy.md"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: markdown}
