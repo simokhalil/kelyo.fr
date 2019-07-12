@@ -117,21 +117,28 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/blog/posts`,
+        path: `${__dirname}/content/blog/posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `categories`,
-        path: `${__dirname}/blog/categories`,
+        path: `${__dirname}/content/blog/categories`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `tags`,
-        path: `${__dirname}/blog/tags`,
+        path: `${__dirname}/content/blog/tags`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages_content`,
+        path: `${__dirname}/content/site`,
       },
     },
     {
