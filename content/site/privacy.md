@@ -4,7 +4,7 @@ title: Politique de confidentialité
 ## **Définitions :**
 
 * **L'Éditeur** : La personne, physique ou morale, qui édite les services de communication au public en ligne.
-* _**Le Site** : L'ensemble des sites, pages Internet et services en ligne proposés par l'Éditeur._
+* **Le Site** : L'ensemble des sites, pages Internet et services en ligne proposés par l'Éditeur.
 * **L'Utilisateur** : La personne utilisant le Site et les services.
 
 ## **Nature des données collectées**
