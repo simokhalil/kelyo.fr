@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import { makeStyles } from '@material-ui/core';
 
@@ -19,14 +20,18 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <span className="copyrights">
+      <div className="copyrights">
         © {new Date().getFullYear()}{' '}
         <a href="https://www.linkedin.com/in/khalilelismaili/">
           Khalil EL ISMAILI
         </a>{' '}
         - All rights reserved. <a href="https://www.gatsbyjs.org/">GatsbyJS</a>{' '}
         + <a href="https://www.netlifycms.org/">Netlify CMS</a> = ♥
-      </span>
+      </div>
+
+      <div className="footer-links">
+        <Link to="/cookie-policy">Politique de confidentialité</Link>
+      </div>
     </footer>
   );
 };
