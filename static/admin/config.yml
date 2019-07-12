@@ -17,7 +17,7 @@ collections:
   - name: posts
     label: Posts
     slug: "{{slug}}"
-    folder: "blog/posts"
+    folder: "content/blog/posts"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -30,7 +30,7 @@ collections:
 
   - name: categories
     label: Categories
-    folder: "blog/categories"
+    folder: "content/blog/categories"
     create: true
     fields:
       - label: "Name"
@@ -39,9 +39,26 @@ collections:
 
   - name: tags
     label: Tags
-    folder: "blog/tags"
+    folder: "content/blog/tags"
     create: true
     fields:
       - label: "Name"
         name: "title"
         wisget: "string"
+
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Privacy policy"
+        name: "privacy-policy"
+        file: "content/site/privacy.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+
+      - label: "Cookies policy"
+        name: "cookies"
+        file: "content/site/cookies.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}

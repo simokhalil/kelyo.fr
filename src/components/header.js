@@ -9,27 +9,12 @@ import SocialLinks from './content/SocialLinks';
 
 import './header.css';
 
-const links = [
-  {
-    path: '/',
-    label: 'Accueil',
-  },
-  {
-    path: '/resume/',
-    label: 'Mon CV',
-  },
-  {
-    path: '/contact/',
-    label: 'Contact',
-  },
-];
-
 const Header = ({ siteTitle, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      file(name: { eq: "resume" }, sourceInstanceName: { eq: "data" }) {
+      resume: file(name: { eq: "resume" }, sourceInstanceName: { eq: "data" }) {
         childDataJson {
           basics {
             profiles {
@@ -40,10 +25,50 @@ const Header = ({ siteTitle, ...props }) => {
           }
         }
       }
+      config: site {
+        siteMetadata {
+          menus {
+            resume
+            contact
+            blog
+          }
+        }
+      }
     }
   `);
 
-  const { profiles } = data.file.childDataJson.basics;
+  const { profiles } = data.resume.childDataJson.basics;
+
+  const { menus } = data.config.siteMetadata;
+
+  console.log('menus', menus);
+
+  const links = [
+    {
+      path: '/',
+      exact: true,
+      label: 'Accueil',
+      isEnabled: true,
+    },
+    {
+      path: '/resume/',
+      exact: true,
+      label: 'Mon CV',
+      isEnabled: menus.resume,
+    },
+    {
+      path: '/blog/',
+      exact: false,
+      label: 'Blog',
+      isEnabled: menus.resume,
+    },
+    {
+      path: '/contact/',
+      exact: true,
+      label: 'Contact',
+      isEnabled: menus.contact,
+    },
+  ];
 
   const toggleMenu = event => {
     event.preventDefault();
@@ -71,7 +96,7 @@ const Header = ({ siteTitle, ...props }) => {
               {links.map((link, index) => (
                 <li
                   className={
-                    globalHistory.location.pathname === link.path
+                    (!link.exact && globalHistory.location.pathname.includes(link.path)) || (link.exact && globalHistory.location.pathname === link.path)
                       ? 'active'
                       : ''
                   }

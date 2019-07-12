@@ -19,6 +19,35 @@ import Header from '../header';
 import './layout.css';
 import '../../styles/layout-overide.css';
 import 'devicon/devicon.min.css';
+import 'cookieconsent/build/cookieconsent.min.css';
+
+try {
+  require('cookieconsent');
+
+  console.log('cookieContent', window.cookieconsent);
+
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#0672c3"
+      },
+      "button": {
+        "background": "transparent",
+        "text": "#fff",
+        "border": "#fff"
+      }
+    },
+    "position": "bottom-right",
+    "content": {
+      "message": "Hé oui, ici aussi les cookies sont de la partie...\nPourquoi ? Tout simplement pour avoir une idée de comment le site est fréquenté.\nSi vous restez, c'est que vous êtes à priori d'accord sur le principe",
+      "dismiss": "OK",
+      "link": "Je veux en savoir plus",
+      "href": "https://www.kelyo.fr"
+    }
+  });
+} catch (e) {
+  console.log(e)
+}
 
 library.add(fab, far, fas, faCheckSquare, faMobileAlt);
 

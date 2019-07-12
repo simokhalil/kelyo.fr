@@ -1,5 +1,5 @@
 import React from 'react';
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+import { Disqus } from 'gatsby-plugin-disqus';
 import { Link, graphql } from 'gatsby';
 import { globalHistory } from '@reach/router';
 
@@ -66,7 +66,6 @@ const Template = ({ data }) => {
           </div>
 
           <div className="container">
-            <CommentCount config={disqusConfig} placeholder={'...'} />
             <Disqus config={disqusConfig} />
           </div>
 
