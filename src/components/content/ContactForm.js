@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import firebase from "firebase/app";
 import { isMobileOnly } from 'react-device-detect';
+import { translate } from 'react-polyglot';
 
 import {
     CircularProgress,
@@ -42,17 +42,6 @@ const styles = {
     },
 };
 
-const firebaseConfig = {
-    apiKey: "AIzaSyD5oUgS5KRo0RgJrAEEJXbQ6GmAZJye_G4",
-};
-
-const errorMessages = {
-  'name.REQUIRED': 'Veuillez renseigner votre nom',
-  'email.REQUIRED': 'Veuillez renseigner votre adresse email',
-  'subject.REQUIRED': 'Veuillez renseigner le sujet de la demande',
-  'message.REQUIRED': 'Veuillez saisir votre message',
-};
-
 class ContactForm extends Component {
     recaptchaRef = React.createRef();
     formRef = React.createRef();
@@ -67,12 +56,6 @@ class ContactForm extends Component {
         isLoading: false,
         isSendSuccess: false,
     };
-
-    componentDidMount() {
-        if (!firebase) {
-            firebase.setFirebaseApp(firebase.initializeApp(firebaseConfig));
-        }
-    }
 
     encode = (data) => {
         return Object.keys(data)
@@ -179,7 +162,7 @@ class ContactForm extends Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes, t } = this.props;
         const { errors, isLoading, isSendSuccess, values } = this.state;
 
         return (
@@ -199,39 +182,39 @@ class ContactForm extends Component {
                         <TextField
                             id="name"
                             name="name"
-                            label="Nom"
+                            label={t('pages.contact.name')}
                             value={values.name}
                             onChange={this.handleChange}
                             className={classes.textField}
                             margin={isMobileOnly ? 'dense' : 'normal'}
                             variant="outlined"
                             error={Boolean(errors.name)}
-                            helperText={errors.name ? errorMessages[`name.${errors.name}`] : null}
+                            helperText={errors.name ? t(`errors.name.${errors.name}`) : null}
                         />
                         <TextField
                             type="email"
                             id="email"
                             name="email"
-                            label="Email"
+                            label={t('pages.contact.email')}
                             value={values.email}
                             onChange={this.handleChange}
                             className={classes.textField}
                             margin={isMobileOnly ? 'dense' : 'normal'}
                             variant="outlined"
                             error={Boolean(errors.email)}
-                            helperText={errors.email ? errorMessages[`email.${errors.email}`] : null}
+                            helperText={errors.email ? t(`errors.email.${errors.email}`) : null}
                         />
                         <TextField
                             id="subject"
                             name="subject"
-                            label="Sujet"
+                            label={t('pages.contact.subject')}
                             value={values.subject}
                             onChange={this.handleChange}
                             className={classes.textField}
                             margin={isMobileOnly ? 'dense' : 'normal'}
                             variant="outlined"
                             error={Boolean(errors.subject)}
-                            helperText={errors.subject ? errorMessages[`subject.${errors.subject}`] : null}
+                            helperText={errors.subject ? t(`errors.subject.${errors.subject}`) : null}
                         />
                     </Col>
                     <Col xs={12} sm={6}>
@@ -240,14 +223,14 @@ class ContactForm extends Component {
                             rows={11}
                             id="message"
                             name="message"
-                            label="Message"
+                            label={t('pages.contact.message')}
                             value={values.message}
                             onChange={this.handleChange}
                             className={classes.textField}
                             margin="dense"
                             variant="outlined"
                             error={Boolean(errors.message)}
-                            helperText={errors.message ? errorMessages[`message.${errors.message}`] : null}
+                            helperText={errors.message ? t(`errors.message.${errors.message}`) : null}
                         />
                     </Col>
                 </Row>
@@ -266,15 +249,15 @@ class ContactForm extends Component {
                     aria-labelledby="alert-dialog-title"
                     aria-describedby="alert-dialog-description"
                 >
-                    <DialogTitle id="alert-dialog-title">Merci !</DialogTitle>
+                    <DialogTitle id="alert-dialog-title">{t('pages.contact.formSentConfirmationTitle')}</DialogTitle>
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
-                            J'ai bien reçu votre message, et vous en remercie. Je m'efforcerai de vous donner un retour au plus vite.
+                            {t('pages.contact.formSentConfirmationText')}
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={() => this.setState({ isSendSuccess: false })} color="primary">
-                            OK
+                            {t('common.ok')}
                         </Button>
                     </DialogActions>
                 </Dialog>
@@ -283,4 +266,8 @@ class ContactForm extends Component {
     }
 }
 
-export default withStyles(styles)(ContactForm);
+export default withStyles(styles)(
+    translate()(
+        ContactForm
+    )
+);

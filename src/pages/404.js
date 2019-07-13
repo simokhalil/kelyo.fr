@@ -1,7 +1,7 @@
 import React from 'react';
+import { translate } from 'react-polyglot';
 
 import Button from '../components/form/Button';
-import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Page from '../components/content/Page';
 
@@ -25,23 +25,23 @@ const useStyles = makeStyles({
   },
 });
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ t }) => {
   const classes = useStyles();
 
   return (
-    <Layout>
-      <SEO title="404: Not found" />
+    <>
+      <SEO title={t('pages.404.title')} />
 
       <Page>
         <div className={classes.root}>
           <h1 className={classes.h1}>404</h1>
-          <h2>PAGE INTROUVABLE</h2>
-          <p>L'Url que vous tentez de visiter n'existe pas</p>
-          <Button href="/">Retour à l'accueil</Button>
+          <h2>{t('pages.404.pageNotFound')}</h2>
+          <p>{t('pages.404.urlNotFound')}</p>
+          <Button href="/">{t('common.backToHome')}</Button>
         </div>
       </Page>
-    </Layout>
+    </>
   );
 };
 
-export default NotFoundPage;
+export default translate()(NotFoundPage);
