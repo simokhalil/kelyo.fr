@@ -30,7 +30,7 @@ const BlogPage = ({ data, pageContext, t }) => {
 
       <Page>
         <Section fullWidth={isMobileOnly}>
-          <PageTitle title={'pages.blog.title'} />
+          <PageTitle title={t('pages.blog.title')} />
 
           {/* <CategoriesList />
                     <TagsList /> */}
