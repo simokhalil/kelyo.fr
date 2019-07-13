@@ -33,7 +33,7 @@ const BlogTagsTemplate = ({ data, pageContext }) => {
                     <div className="container">
                         <Row>
                             {postList.edges.map(({ node }, index) => {
-                                const path = `/blog/${node.fields.year}/${node.fields.month}/${node.fields.slug}`;
+                                const path = `/blog/${node.fields.slug}`;
 
                                 return (
                                     <Col
