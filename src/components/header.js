@@ -96,7 +96,7 @@ const Header = ({ siteTitle, ...props }) => {
               {links.map((link, index) => (
                 <li
                   className={
-                    (!link.exact && globalHistory.location.pathname.includes(link.path)) || (link.exact && globalHistory.location.pathname === link.path)
+                    (!link.exact && globalHistory.location.pathname.startsWith(link.path)) || (link.exact && globalHistory.location.pathname === link.path)
                       ? 'active'
                       : ''
                   }
