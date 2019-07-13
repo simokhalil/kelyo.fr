@@ -1,6 +1,6 @@
 export default {
   common: {
-    backToHome: 'Retour à l\'accueil',
+    backToHome: "Retour à l'accueil",
     ok: 'OK',
   },
   errors: {
@@ -24,11 +24,11 @@ export default {
     '404': {
       title: '404: Not found',
       pageNotFound: 'PAGE INTROUVABLE',
-      urlNotFound: 'L\'Url que vous tentez de visiter n\'existe pas',
+      urlNotFound: "L'Url que vous tentez de visiter n'existe pas",
     },
     blog: {
       title: 'Blog',
-      description: 'Kelyo Blog. Blog de Khalil EL ISMAILI. News tech, Tutoriaux Dév, astuces, et plein d\'autres choses',
+      description: "Kelyo Blog. Blog de Khalil EL ISMAILI. News tech, Tutoriaux Dév, astuces, et plein d'autres choses",
     },
     contact: {
       title: 'Contact',
@@ -40,7 +40,7 @@ export default {
       subject: 'Sujet',
       message: 'Message',
       formSentConfirmationTitle: 'Merci !',
-      formSentConfirmationText: 'J\'ai bien reçu votre message, et vous en remercie.Je m\'efforcerai de vous donner un retour au plus vite.',
+      formSentConfirmationText: "J'ai bien reçu votre message, et vous en remercie.Je m'efforcerai de vous donner un retour au plus vite.",
     },
     home: {
       servicesTitle: 'Ce que je vous propose',
@@ -48,7 +48,7 @@ export default {
     },
     resume: {
       title: 'Mon CV',
-      yearsOfExprerience: '%{smart_count} an d\'expérience |||| %{smart_count} années d\'expérience',
+      yearsOfExprerience: "%{smart_count} an d'expérience |||| %{smart_count} années d'expérience",
       education: 'Formation',
       experience: 'Expérience',
       skills: 'Compétences',
@@ -56,5 +56,5 @@ export default {
   },
   resume: {
     downloadResume: 'Télécharger mon CV',
-  }
+  },
 };

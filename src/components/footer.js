@@ -35,20 +35,36 @@ const Footer = ({ t }) => {
   `);
 
   return (
-      <footer className={classes.footer}>
-        <div className="copyrights">
-          © {new Date().getFullYear()}{' '}
-          <a href="https://www.linkedin.com/in/khalilelismaili/" className={classes.link}>
-            {data.site.siteMetadata.title}
-          </a>{' '}
-          - <a href="https://www.gatsbyjs.org/" className={classes.link}>GatsbyJS</a>{' '}
-          + <a href="https://www.netlifycms.org/" className={classes.link}>Netlify CMS</a> = ♥
-        </div>
+    <footer className={classes.footer}>
+      <div className="copyrights">
+        © {new Date().getFullYear()}{' '}
+        <a
+          href="https://www.linkedin.com/in/khalilelismaili/"
+          className={classes.link}
+        >
+          {data.site.siteMetadata.title}
+        </a>{' '}
+        -{' '}
+        <a href="https://www.gatsbyjs.org/" className={classes.link}>
+          GatsbyJS
+        </a>{' '}
+        +{' '}
+        <a href="https://www.netlifycms.org/" className={classes.link}>
+          Netlify CMS
+        </a>{' '}
+        = ♥
+      </div>
 
-        <div className="footer-links">
-        <Link to="/privacy-policy" className={classes.link}>{t('footer.privacyPolicy')}</Link> | <Link to="/cookies" className={classes.link}>{t('footer.cookiesPolicy')}</Link>
-        </div>
-      </footer>
+      <div className="footer-links">
+        <Link to="/privacy-policy" className={classes.link}>
+          {t('footer.privacyPolicy')}
+        </Link>{' '}
+        |{' '}
+        <Link to="/cookies" className={classes.link}>
+          {t('footer.cookiesPolicy')}
+        </Link>
+      </div>
+    </footer>
   );
 };
 

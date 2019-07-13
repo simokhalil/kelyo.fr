@@ -68,7 +68,9 @@ const SecondPage = ({ t }) => {
         <Section>
           <PageTitle
             title={t('pages.resume.title')}
-            description={t('pages.resume.yearsOfExprerience', { smart_count: basics.yearsOfExperience })}
+            description={t('pages.resume.yearsOfExprerience', {
+              smart_count: basics.yearsOfExperience,
+            })}
             pathname="/resume/"
           />
 

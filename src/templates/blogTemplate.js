@@ -11,7 +11,6 @@ import Section from '../components/content/Section';
 import '../styles/blog.css';
 
 const Template = ({ data }) => {
-
   const { post, config } = data;
 
   const { id, frontmatter, fields, excerpt, html } = post;
@@ -20,7 +19,7 @@ const Template = ({ data }) => {
     url: `${config.siteMetadata.siteUrl + globalHistory.location.pathname}`,
     identifier: id,
     title: frontmatter.title,
-  }
+  };
 
   return (
     <>
@@ -31,7 +30,11 @@ const Template = ({ data }) => {
       />
 
       <Page>
-        <img src={frontmatter.image} style={{ width: '100%' }} alt={frontmatter.title} />
+        <img
+          src={frontmatter.image}
+          style={{ width: '100%' }}
+          alt={frontmatter.title}
+        />
         <Section style={{ marginTop: '-50px', width: '95%', minWidth: '95%' }}>
           <PageTitle title={frontmatter.title} description={frontmatter.date} />
 
@@ -47,18 +50,21 @@ const Template = ({ data }) => {
           <div className="container">
             <div className="post-meta">
               <div className="info">
-                <span className="date">
-                  {frontmatter.date}
-                </span>
-                <span className="author">
-                  {config.siteMetadata.author}
-                </span>
+                <span className="date">{frontmatter.date}</span>
+                <span className="author">{config.siteMetadata.author}</span>
               </div>
             </div>
             <div className="post-tags">
               <div className="tags">
                 {frontmatter.tags.map((tag, index) => (
-                  <Link to={`/blog/tags/${tag}`} rel={tag} key={index} className="tag">{tag}</Link>
+                  <Link
+                    to={`/blog/tags/${tag}`}
+                    rel={tag}
+                    key={index}
+                    className="tag"
+                  >
+                    {tag}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -67,7 +73,6 @@ const Template = ({ data }) => {
           <div className="container">
             <Disqus config={disqusConfig} />
           </div>
-
         </Section>
       </Page>
     </>

@@ -95,7 +95,10 @@ const Header = ({ siteTitle, t, ...props }) => {
               {links.map((link, index) => (
                 <li
                   className={
-                    (!link.exact && globalHistory.location.pathname.startsWith(link.path)) || (link.exact && globalHistory.location.pathname === link.path)
+                    (!link.exact &&
+                      globalHistory.location.pathname.startsWith(link.path)) ||
+                    (link.exact &&
+                      globalHistory.location.pathname === link.path)
                       ? 'active'
                       : ''
                   }
@@ -131,7 +134,7 @@ const Header = ({ siteTitle, t, ...props }) => {
           onClick={toggleMenu}
           aria-label="menu-toggle"
         >
-          <FontAwesomeIcon icon={["fas", "bars"]} />
+          <FontAwesomeIcon icon={['fas', 'bars']} />
         </button>
       </div>
     </>

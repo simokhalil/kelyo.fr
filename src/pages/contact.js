@@ -39,7 +39,10 @@ const ContactPage = ({ t }) => {
 
       <Page>
         <Section>
-          <PageTitle title={t('pages.contact.title')} description={t('pages.contact.description')} />
+          <PageTitle
+            title={t('pages.contact.title')}
+            description={t('pages.contact.description')}
+          />
 
           <Row>
             <Col xs={12}>

@@ -20,10 +20,12 @@ const useStyles = makeStyles({
 });
 
 const CookiesPolicyPage = ({ t }) => {
-
   const data = useStaticQuery(graphql`
     query CookiesPageQuery {
-      file(sourceInstanceName: {eq: "pages_content"}, name: {eq: "cookies"}) {
+      file(
+        sourceInstanceName: { eq: "pages_content" }
+        name: { eq: "cookies" }
+      ) {
         id
         childMarkdownRemark {
           frontmatter {
@@ -35,7 +37,10 @@ const CookiesPolicyPage = ({ t }) => {
     }
   `);
 
-  const { html, frontmatter: { title } } = data.file.childMarkdownRemark;
+  const {
+    html,
+    frontmatter: { title },
+  } = data.file.childMarkdownRemark;
 
   const classes = useStyles();
 
@@ -45,17 +50,16 @@ const CookiesPolicyPage = ({ t }) => {
 
       <Page>
         <Section>
-          <PageTitle
-            title={title}
-            description=""
-            pathname="/privacy-policy/"
-          />
+          <PageTitle title={title} description="" pathname="/privacy-policy/" />
 
-          <div dangerouslySetInnerHTML={{ __html: html }} className={classes.content} />
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+            className={classes.content}
+          />
         </Section>
       </Page>
     </>
   );
-}
+};
 
 export default translate()(CookiesPolicyPage);

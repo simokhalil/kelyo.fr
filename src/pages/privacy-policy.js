@@ -19,10 +19,12 @@ const useStyles = makeStyles({
 });
 
 const PrivacyPolicyPage = () => {
-
   const data = useStaticQuery(graphql`
     query PrivacyPageQuery {
-      file(sourceInstanceName: {eq: "pages_content"}, name: {eq: "privacy"}) {
+      file(
+        sourceInstanceName: { eq: "pages_content" }
+        name: { eq: "privacy" }
+      ) {
         id
         childMarkdownRemark {
           frontmatter {
@@ -34,7 +36,10 @@ const PrivacyPolicyPage = () => {
     }
   `);
 
-  const { html, frontmatter: { title } } = data.file.childMarkdownRemark;
+  const {
+    html,
+    frontmatter: { title },
+  } = data.file.childMarkdownRemark;
 
   const classes = useStyles();
 
@@ -44,17 +49,16 @@ const PrivacyPolicyPage = () => {
 
       <Page>
         <Section>
-          <PageTitle
-            title={title}
-            description=""
-            pathname="/privacy-policy/"
-          />
+          <PageTitle title={title} description="" pathname="/privacy-policy/" />
 
-          <div dangerouslySetInnerHTML={{ __html: html }} className={classes.content} />
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+            className={classes.content}
+          />
         </Section>
       </Page>
     </>
   );
-}
+};
 
 export default PrivacyPolicyPage;
