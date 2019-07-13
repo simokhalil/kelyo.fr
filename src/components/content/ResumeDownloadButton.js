@@ -1,11 +1,12 @@
 import React from 'react';
+import { translate } from 'react-polyglot';
 
 import Button from '../form/Button';
 
-const ResumeDownloadButton = ({ url }) => (
+const ResumeDownloadButton = ({ url, t }) => (
     <Button href={url}>
-        Télécharger mon CV
+        {t('resume.downloadResume')}
     </Button>
 );
 
-export default ResumeDownloadButton;
+export default translate()(ResumeDownloadButton);

@@ -5936,6 +5936,13 @@ gatsby-plugin-google-analytics@^2.1.0:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
+gatsby-plugin-layout@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.1.2.tgz#f3f9ed8c034ebc9d3116a12ae3457f852ddf2490"
+  integrity sha512-nXtF5SJbx+qcSQBXLnpq3YeaPN0LEbkkH3HOJcoFfynzY0cKH4o09+IO3WGxoV/XLBjcxc3OxZFwBqQaeL6Keg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-plugin-manifest@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.1.1.tgz#e987d6e655b1dcfba6e10d65ff20722aaeb75391"
@@ -11543,6 +11550,14 @@ react-polyglot@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/react-polyglot/-/react-polyglot-0.4.0.tgz#87712ecf73858755e2705419adf1294f1c0eae91"
   integrity sha512-XdLi0NZCJ1nGxHEMry238MPvWypDiU9xFBP30atbKrAsIiAf7nTA/EXCzQWMVX7kv4YPj+Ly4Fo9QMWEQOq1aw==
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    prop-types "^15.5.8"
+
+react-polyglot@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-polyglot/-/react-polyglot-0.4.1.tgz#3a84acfcee8671820435d267c8de9b721fe43c28"
+  integrity sha512-PubKTJg5XPd9Tf5vhiDCo6glSvK3tuyZ5LcKoWcJ9AetO1TsHwgnKzU9it0n8Gxl+05XLeP30OR8CIpgJ0L9gg==
   dependencies:
     hoist-non-react-statics "^2.5.0"
     prop-types "^15.5.8"

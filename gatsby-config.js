@@ -18,6 +18,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout/layout.js`)
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [{

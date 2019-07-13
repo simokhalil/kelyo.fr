@@ -23,6 +23,7 @@
     "gatsby-plugin-catch-links": "^2.0.15",
     "gatsby-plugin-disqus": "^1.1.1",
     "gatsby-plugin-google-analytics": "^2.1.0",
+    "gatsby-plugin-layout": "^1.1.2",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-material-ui": "^2.0.1",
     "gatsby-plugin-netlify-cms": "^4.1.0",
@@ -45,6 +46,7 @@
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-polyglot": "^0.4.1",
     "recompose": "^0.30.0"
   },
   "devDependencies": {
