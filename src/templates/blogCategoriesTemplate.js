@@ -4,7 +4,6 @@ import { isMobileOnly } from 'react-device-detect';
 
 import BlogListItem from '../components/blog/BlogListItem';
 import Col from '../components/content/Col';
-import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
 import Pagination from '../components/content/Pagination';
@@ -19,7 +18,7 @@ const BlogCategoriesTemplate = ({ data, pageContext }) => {
     const { currentPage, numPages, category } = pageContext;
 
     return (
-        <Layout>
+        <>
             <SEO
                 title={`Blog - Catégories - ${category}`}
                 pathname={`/blog/categories/${category}`}
@@ -57,7 +56,7 @@ const BlogCategoriesTemplate = ({ data, pageContext }) => {
                     </div>
                 </Section>
             </Page>
-        </Layout>
+        </>
     );
 };
 

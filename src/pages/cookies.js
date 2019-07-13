@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
+import { translate } from 'react-polyglot';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
 import SEO from '../components/seo';
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
 });
 
-const CookiesPolicyPage = () => {
+const CookiesPolicyPage = ({ t }) => {
 
   const data = useStaticQuery(graphql`
     query CookiesPageQuery {
@@ -40,8 +40,8 @@ const CookiesPolicyPage = () => {
   const classes = useStyles();
 
   return (
-    <Layout>
-      <SEO title="Politique de confidentialité" />
+    <>
+      <SEO title={title} />
 
       <Page>
         <Section>
@@ -54,8 +54,8 @@ const CookiesPolicyPage = () => {
           <div dangerouslySetInnerHTML={{ __html: html }} className={classes.content} />
         </Section>
       </Page>
-    </Layout>
+    </>
   );
 }
 
-export default CookiesPolicyPage;
+export default translate()(CookiesPolicyPage);

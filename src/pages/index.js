@@ -1,12 +1,12 @@
 import BackgroundImage from 'gatsby-background-image';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import { translate } from 'react-polyglot';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { makeStyles } from '@material-ui/core';
 
 import Col from '../components/content/Col';
-import Layout from '../components/layout/layout';
 import InfoBlockWithIcon from '../components/content/InfoBlockWithIcon';
 import Page from '../components/content/Page';
 import ResumeDownloadButton from '../components/content/ResumeDownloadButton';
@@ -32,7 +32,7 @@ const useStyles = makeStyles({
   },
 });
 
-const IndexPage = () => {
+const IndexPage = ({ t }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       profile: file(
@@ -69,8 +69,8 @@ const IndexPage = () => {
   const imageData = data.profileImage.childImageSharp.fluid;
 
   return (
-    <Layout>
-      <SEO title="Développeur Web & Mobile" />
+    <>
+      <SEO title="Kelyo" />
 
       <Page>
         <Section fullWidth>
@@ -105,7 +105,7 @@ const IndexPage = () => {
         <Section>
           <Row>
             <Col xs={12} sm={12}>
-              <SectionTitle title="Ce que je vous propose" />
+              <SectionTitle title={t('pages.home.servicesTitle')} />
 
               <Row>
                 {basics.services.map((services, index) => (
@@ -126,7 +126,7 @@ const IndexPage = () => {
 
           <Row>
             <Col xs={12} sm={12}>
-              <SectionTitle title="Technologies" />
+              <SectionTitle title={t('pages.home.technologiesTitle')} />
 
               <Row>
                 <Col
@@ -199,8 +199,8 @@ const IndexPage = () => {
           </Row>
         </Section>
       </Page>
-    </Layout>
+    </>
   );
 };
 
-export default IndexPage;
+export default translate()(IndexPage);

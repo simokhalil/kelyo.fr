@@ -1,10 +1,10 @@
 import React from 'react';
+import { translate } from 'react-polyglot';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Col from '../components/content/Col';
 import ContactForm from '../components/content/ContactForm';
 import InfoBlockRaise from '../components/content/InfoBlockRaise';
-import Layout from '../components/layout/layout';
 import Map from '../components/map/Map';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
@@ -13,7 +13,7 @@ import SEO from '../components/seo';
 import Section from '../components/content/Section';
 import SectionTitle from '../components/content/SectionTitle';
 
-const ContactPage = () => {
+const ContactPage = ({ t }) => {
   const data = useStaticQuery(graphql`
     query ConstactQuery {
       file(name: { eq: "resume" }, sourceInstanceName: { eq: "data" }) {
@@ -34,12 +34,12 @@ const ContactPage = () => {
   const { basics } = data.file.childDataJson;
 
   return (
-    <Layout>
-      <SEO title="Contact" pathname="/contact/" />
+    <>
+      <SEO title={t('pages.contact.title')} pathname="/contact/" />
 
       <Page>
         <Section>
-          <PageTitle title="Contact" description="Restons en contact" />
+          <PageTitle title={t('pages.contact.title')} description={t('pages.contact.description')} />
 
           <Row>
             <Col xs={12}>
@@ -63,7 +63,7 @@ const ContactPage = () => {
             <Col xs={12} sm={3}>
               <InfoBlockRaise
                 icon={['far', 'check-circle']}
-                label="Dispo en freelance"
+                label={t('pages.contact.status')}
               />
             </Col>
           </Row>
@@ -71,7 +71,7 @@ const ContactPage = () => {
           <Row>
             <Col xs={12} sm={2}></Col>
             <Col xs={12} sm={8} style={{ padding: '50px 0' }}>
-              <SectionTitle title="Que puis-je faire pour vous ?" />
+              <SectionTitle title={t('pages.contact.formTitle')} />
 
               <ContactForm />
             </Col>
@@ -79,8 +79,8 @@ const ContactPage = () => {
           </Row>
         </Section>
       </Page>
-    </Layout>
+    </>
   );
 };
 
-export default ContactPage;
+export default translate()(ContactPage);

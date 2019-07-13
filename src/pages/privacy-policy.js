@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
 import SEO from '../components/seo';
@@ -40,8 +39,8 @@ const PrivacyPolicyPage = () => {
   const classes = useStyles();
 
   return (
-    <Layout>
-      <SEO title="Politique de confidentialité" />
+    <>
+      <SEO title={title} />
 
       <Page>
         <Section>
@@ -54,7 +53,7 @@ const PrivacyPolicyPage = () => {
           <div dangerouslySetInnerHTML={{ __html: html }} className={classes.content} />
         </Section>
       </Page>
-    </Layout>
+    </>
   );
 }
 

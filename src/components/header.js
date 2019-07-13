@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { globalHistory } from '@reach/router';
+import { translate } from 'react-polyglot';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SocialLinks from './content/SocialLinks';
 
 import './header.css';
 
-const Header = ({ siteTitle, ...props }) => {
+const Header = ({ siteTitle, t, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const data = useStaticQuery(graphql`
@@ -41,31 +42,29 @@ const Header = ({ siteTitle, ...props }) => {
 
   const { menus } = data.config.siteMetadata;
 
-  console.log('menus', menus);
-
   const links = [
     {
       path: '/',
       exact: true,
-      label: 'Accueil',
+      label: t('menus.home'),
       isEnabled: true,
     },
     {
       path: '/resume/',
       exact: true,
-      label: 'Mon CV',
+      label: t('menus.resume'),
       isEnabled: menus.resume,
     },
     {
       path: '/blog/',
       exact: false,
-      label: 'Blog',
+      label: t('menus.blog'),
       isEnabled: menus.resume,
     },
     {
       path: '/contact/',
       exact: true,
-      label: 'Contact',
+      label: t('menus.contact'),
       isEnabled: menus.contact,
     },
   ];
@@ -147,4 +146,4 @@ Header.defaultProps = {
   siteTitle: ``,
 };
 
-export default Header;
+export default translate()(Header);

@@ -1,9 +1,9 @@
 import React from 'react';
+import { translate } from 'react-polyglot';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Col from '../components/content/Col';
 import DateTimeUtils from '../utils/datetime';
-import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
 import Row from '../components/content/Row';
@@ -17,7 +17,7 @@ import Timeline from '../components/content/Timeline';
 import TimelineItem from '../components/content/TimelineItem';
 import ResumeDownloadButton from '../components/content/ResumeDownloadButton';
 
-const SecondPage = () => {
+const SecondPage = ({ t }) => {
   const data = useStaticQuery(graphql`
     query ResumeQuery {
       file(name: { eq: "resume" }, sourceInstanceName: { eq: "data" }) {
@@ -61,20 +61,20 @@ const SecondPage = () => {
   const { basics, education, skills, work } = data.file.childDataJson;
 
   return (
-    <Layout>
-      <SEO title="CV" />
+    <>
+      <SEO title={t('pages.resume.title')} />
 
       <Page>
         <Section>
           <PageTitle
-            title="Mon CV"
-            description={`${basics.yearsOfExperience} ans d'expérience`}
+            title={t('pages.resume.title')}
+            description={t('pages.resume.yearsOfExprerience', { smart_count: basics.yearsOfExperience })}
             pathname="/resume/"
           />
 
           <Row spacing={5}>
             <Col xs={12} sm={8}>
-              <SectionTitle title="Formation" />
+              <SectionTitle title={t('pages.resume.education')} />
 
               <Timeline>
                 {education.map((educationItem, educationIndex) => (
@@ -94,7 +94,7 @@ const SecondPage = () => {
 
               <Spacer />
 
-              <SectionTitle title="Expérience" />
+              <SectionTitle title={t('pages.resume.experience')} />
 
               <Timeline>
                 {work.map((workItem, workIndex) => (
@@ -113,7 +113,7 @@ const SecondPage = () => {
             </Col>
 
             <Col xs={12} sm={4}>
-              <SectionTitle title="Compétences" />
+              <SectionTitle title={t('pages.resume.skills')} />
 
               {skills.map((skillsGroup, skillsGroupIndex) => (
                 <Skills title={skillsGroup.title} key={skillsGroupIndex}>
@@ -138,8 +138,8 @@ const SecondPage = () => {
           </Row>
         </Section>
       </Page>
-    </Layout>
+    </>
   );
 };
 
-export default SecondPage;
+export default translate()(SecondPage);

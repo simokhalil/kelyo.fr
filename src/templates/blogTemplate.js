@@ -3,7 +3,6 @@ import { Disqus } from 'gatsby-plugin-disqus';
 import { Link, graphql } from 'gatsby';
 import { globalHistory } from '@reach/router';
 
-import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
 import SEO from '../components/seo';
@@ -24,7 +23,7 @@ const Template = ({ data }) => {
   }
 
   return (
-    <Layout>
+    <>
       <SEO
         title={frontmatter.title}
         pathname={`/blog/${fields.slug}`}
@@ -71,7 +70,7 @@ const Template = ({ data }) => {
 
         </Section>
       </Page>
-    </Layout>
+    </>
   );
 };
 

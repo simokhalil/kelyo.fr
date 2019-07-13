@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { isMobileOnly } from 'react-device-detect';
+import { translate } from 'react-polyglot';
 
 import BlogListItem from '../components/blog/BlogListItem';
 import CategoriesList from '../components/blog/sidebar/categories';
 import Col from '../components/content/Col';
-import Layout from '../components/layout/layout';
 import Page from '../components/content/Page';
 import PageTitle from '../components/content/PageTitle';
 import Pagination from '../components/content/Pagination';
@@ -16,21 +16,21 @@ import TagsList from '../components/blog/sidebar/tags';
 
 import '../styles/blog.css';
 
-const BlogPage = ({ data, pageContext }) => {
+const BlogPage = ({ data, pageContext, t }) => {
     const { postList, config } = data;
     const { currentPage, numPages } = pageContext;
 
     return (
-        <Layout>
+        <>
             <SEO
-                title="Blog"
+                title={'pages.blog.title'}
                 pathname="/blog/"
-                description="Kelyo Blog. Blog de Khalil EL ISMAILI. News tech, Tutoriaux Dév, astuces, et plein d'autres choses"
+                description={t('pages.blog.description')}
             />
 
             <Page>
                 <Section fullWidth={isMobileOnly}>
-                    <PageTitle title="Blog" />
+                  <PageTitle title={'pages.blog.title'} />
 
                     {/* <CategoriesList />
                     <TagsList /> */}
@@ -62,11 +62,11 @@ const BlogPage = ({ data, pageContext }) => {
                     </div>
                 </Section>
             </Page>
-        </Layout>
+        </>
     );
 };
 
-export default BlogPage;
+export default translate()(BlogPage);
 
 export const listQuery = graphql`
   query PaginatedBlogListQuery($skip: Int!, $limit: Int!) {
