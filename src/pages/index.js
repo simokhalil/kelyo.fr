@@ -61,6 +61,12 @@ const IndexPage = ({ t }) => {
           }
         }
       }
+
+      config: site {
+        siteMetadata {
+          author
+        }
+      }
     }
   `);
 
@@ -73,7 +79,7 @@ const IndexPage = ({ t }) => {
 
   return (
     <>
-      <SEO title="Kelyo" />
+      <SEO title={data.config.siteMetadata.author} />
 
       <Page>
         <Section fullWidth>
