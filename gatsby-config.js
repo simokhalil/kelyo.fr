@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Khalil EL ISMAILI`,
+    title: `Kelyo`,
     description: `Développeur Web et Mobile multi-platefomes, je suis consultant sur les nouvelles technos (Javascript, ReactJS / React Native, Angular, NodeJS) sur Nantes et alentours`,
     author: `Khalil EL ISMAILI`,
     siteUrl: `https://www.kelyo.fr`,
@@ -17,12 +17,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
-    /*{
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/components/layout/layout.js`)
-      }
-    },*/
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -161,7 +155,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
-        layout: require.resolve(`./src/components/layout/layout.js`),
+        layout: require.resolve(`./src/layout/layout.js`),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

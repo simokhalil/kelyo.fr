@@ -2,16 +2,16 @@ import React from 'react';
 import { translate } from 'react-polyglot';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Col from '../components/content/Col';
+import Col from '../components/common/Col';
 import ContactForm from '../components/content/ContactForm';
 import InfoBlockRaise from '../components/content/InfoBlockRaise';
 import Map from '../components/map/Map';
-import Page from '../components/content/Page';
-import PageTitle from '../components/content/PageTitle';
-import Row from '../components/content/Row';
+import Page from '../components/common/Page';
+import PageTitle from '../components/common/PageTitle';
+import Row from '../components/common/Row';
 import SEO from '../components/seo';
-import Section from '../components/content/Section';
-import SectionTitle from '../components/content/SectionTitle';
+import Section from '../components/common/Section';
+import SectionTitle from '../components/common/SectionTitle';
 
 const ContactPage = ({ t }) => {
   const data = useStaticQuery(graphql`

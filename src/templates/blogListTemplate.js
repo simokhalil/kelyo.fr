@@ -5,13 +5,13 @@ import { translate } from 'react-polyglot';
 
 import BlogListItem from '../components/blog/BlogListItem';
 import CategoriesList from '../components/blog/sidebar/categories';
-import Col from '../components/content/Col';
-import Page from '../components/content/Page';
-import PageTitle from '../components/content/PageTitle';
-import Pagination from '../components/content/Pagination';
-import Row from '../components/content/Row';
+import Col from '../components/common/Col';
+import Page from '../components/common/Page';
+import PageTitle from '../components/common/PageTitle';
+import Pagination from '../components/common/Pagination';
+import Row from '../components/common/Row';
 import SEO from '../components/seo';
-import Section from '../components/content/Section';
+import Section from '../components/common/Section';
 import TagsList from '../components/blog/sidebar/tags';
 
 import '../styles/blog.css';

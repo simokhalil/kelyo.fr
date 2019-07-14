@@ -15,8 +15,8 @@ import {
 } from '@material-ui/core';
 
 import Button from '../form/Button';
-import Col from './Col';
-import Row from './Row';
+import Col from '../common/Col';
+import Row from '../common/Row';
 
 const styles = {
     textField: {
