@@ -12,11 +12,10 @@ body {
     font-family: 'Poppins', arial, sans-serif;
 }
 
-#___gatsby {
-    height: 100%;
-}
-
-#___gatsby > div:first-child {
+#___gatsby,
+#___gatsby > div:first-child,
+.tl-edges,
+.tl-wrapper {
     height: 100%;
 }
 

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { globalHistory } from '@reach/router';
@@ -47,31 +48,49 @@ const Header = ({ siteTitle, t, ...props }) => {
       path: '/',
       exact: true,
       label: t('menus.home'),
-      isEnabled: true,
+      isEnabled: globalHistory.location.pathname === '/',
     },
     {
       path: '/resume/',
       exact: true,
       label: t('menus.resume'),
       isEnabled: menus.resume,
+      isActive: globalHistory.location.pathname === '/resume/',
     },
     {
       path: '/blog/',
       exact: false,
       label: t('menus.blog'),
       isEnabled: menus.resume,
+      isActive: globalHistory.location.pathname.startsWith('/blog/'),
     },
     {
       path: '/contact/',
       exact: true,
       label: t('menus.contact'),
       isEnabled: menus.contact,
+      isActive: globalHistory.location.pathname === '/contact/',
     },
   ];
 
   const toggleMenu = event => {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     setIsOpen(!isOpen);
+  };
+
+  const setActiveMenu = (index) => {
+    links.forEach(link => link.isActive = false);
+    links[index].isActive = true;
+    toggleMenu();
+  };
+
+  const getPageTransitionDirection = (index) => {
+    // const pageTransitionDirections = ['up', 'left', 'right', 'down'];
+    // pageTransitionDirections[Math.floor(Math.random() * pageTransitionDirections.length)]
+    const activeIndex = links.findIndex((link) => link.isActive);
+    return index < activeIndex ? 'right' : 'left';
   };
 
   return (
@@ -85,9 +104,14 @@ const Header = ({ siteTitle, t, ...props }) => {
           </div>
 
           <div className="site-title-block">
-            <Link to="/" className="site-title">
+            <AniLink
+              swipe
+              entryOffset={20}
+              duration={1} to="/"
+              className="site-title"
+            >
               {siteTitle}
-            </Link>
+            </AniLink>
           </div>
 
           <div className="site-nav dl-menuwrapper">
@@ -104,9 +128,18 @@ const Header = ({ siteTitle, t, ...props }) => {
                   }
                   key={index}
                 >
-                  <Link to={link.path} className="pt-trigger">
+                  <AniLink
+                    swipe
+                    direction={getPageTransitionDirection(index)}
+                    to={link.path}
+                    top={getPageTransitionDirection(index) === 'left' ? 'entry' : 'exit'}
+                    entryOffset={20}
+                    duration={0.5}
+                    className="pt-trigger"
+                    onClick={() => setActiveMenu(index)}
+                  >
                     {link.label}
-                  </Link>
+                  </AniLink>
                 </li>
               ))}
             </ul>
