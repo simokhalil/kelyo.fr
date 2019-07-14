@@ -74,19 +74,21 @@ const Header = ({ siteTitle, t, ...props }) => {
   ];
 
   const toggleMenu = event => {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     setIsOpen(!isOpen);
   };
 
   const setActiveMenu = (index) => {
     links.forEach(link => link.isActive = false);
     links[index].isActive = true;
+    toggleMenu();
   };
 
   const getPageTransitionDirection = (index) => {
     // const pageTransitionDirections = ['up', 'left', 'right', 'down'];
     // pageTransitionDirections[Math.floor(Math.random() * pageTransitionDirections.length)]
-    console.log('going to', index);
     const activeIndex = links.findIndex((link) => link.isActive);
     return index < activeIndex ? 'right' : 'left';
   };
@@ -132,7 +134,7 @@ const Header = ({ siteTitle, t, ...props }) => {
                     to={link.path}
                     top={getPageTransitionDirection(index) === 'left' ? 'entry' : 'exit'}
                     entryOffset={20}
-                    duration={1}
+                    duration={0.5}
                     className="pt-trigger"
                     onClick={() => setActiveMenu(index)}
                   >
