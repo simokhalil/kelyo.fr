@@ -6,14 +6,15 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import { makeStyles } from '@material-ui/core';
 
-import Col from '../components/content/Col';
+import Col from '../components/common/Col';
 import InfoBlockWithIcon from '../components/content/InfoBlockWithIcon';
-import Page from '../components/content/Page';
+import Page from '../components/common/Page';
 import ResumeDownloadButton from '../components/content/ResumeDownloadButton';
-import Row from '../components/content/Row';
+import Row from '../components/common/Row';
 import SEO from '../components/seo';
-import Section from '../components/content/Section';
-import SectionTitle from '../components/content/SectionTitle';
+import Section from '../components/common/Section';
+import SectionTitle from '../components/common/SectionTitle';
+import TechnologiesSection from '../components/content/TechnologiesSection';
 
 const useStyles = makeStyles({
   h1: {
@@ -67,6 +68,8 @@ const IndexPage = ({ t }) => {
 
   const { basics } = data.profile.childDataJson;
   const imageData = data.profileImage.childImageSharp.fluid;
+
+  const devIconColoredClass = 'colored';
 
   return (
     <>
@@ -128,73 +131,7 @@ const IndexPage = ({ t }) => {
             <Col xs={12} sm={12}>
               <SectionTitle title={t('pages.home.technologiesTitle')} />
 
-              <Row>
-                <Col
-                  xs={12}
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    flexWrap: 'wrap',
-                  }}
-                >
-                  <i
-                    className="devicon-javascript-plain colored"
-                    style={{ fontSize: '54px' }}
-                  ></i>
-                  <i
-                    className="devicon-typescript-plain colored"
-                    style={{ fontSize: '54px' }}
-                  ></i>
-                  <i
-                    className="devicon-webpack-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-react-original-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-nodejs-plain colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-express-original-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-mongodb-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-angularjs-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-git-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-bootstrap-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-html5-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-css3-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-sass-original colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                  <i
-                    className="devicon-docker-plain-wordmark colored"
-                    style={{ fontSize: '54px' }}
-                  />
-                </Col>
-              </Row>
+              <TechnologiesSection colored />
             </Col>
           </Row>
         </Section>

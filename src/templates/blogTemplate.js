@@ -3,10 +3,10 @@ import { Disqus } from 'gatsby-plugin-disqus';
 import { Link, graphql } from 'gatsby';
 import { globalHistory } from '@reach/router';
 
-import Page from '../components/content/Page';
-import PageTitle from '../components/content/PageTitle';
+import Page from '../components/common/Page';
+import PageTitle from '../components/common/PageTitle';
 import SEO from '../components/seo';
-import Section from '../components/content/Section';
+import Section from '../components/common/Section';
 
 import '../styles/blog.css';
 

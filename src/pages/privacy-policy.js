@@ -2,10 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Page from '../components/content/Page';
-import PageTitle from '../components/content/PageTitle';
+import Page from '../components/common/Page';
+import PageTitle from '../components/common/PageTitle';
 import SEO from '../components/seo';
-import Section from '../components/content/Section';
+import Section from '../components/common/Section';
 
 const useStyles = makeStyles({
   content: {
