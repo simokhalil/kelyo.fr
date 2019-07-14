@@ -17,12 +17,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
-    {
+    /*{
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/components/layout/layout.js`)
       }
-    },
+    },*/
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -157,6 +157,12 @@ module.exports = {
       options: {
         shortname: `kelyo`
       }
+    },
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: require.resolve(`./src/components/layout/layout.js`),
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
