@@ -110,7 +110,7 @@ const IndexPage = ({ t }) => {
             <Col xs={12} sm={12}>
               <SectionTitle title={t('pages.home.servicesTitle')} />
 
-              <Row>
+              <Row spacing={5}>
                 {basics.services.map((services, index) => (
                   <Col xs={12} sm={6} key={index}>
                     {services.map((service, serviceIndex) => (
