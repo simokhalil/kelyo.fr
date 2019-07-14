@@ -3,7 +3,7 @@ import { translate } from 'react-polyglot';
 
 import Button from '../components/form/Button';
 import SEO from '../components/seo';
-import Page from '../components/content/Page';
+import Page from '../components/common/Page';
 
 import { makeStyles } from '@material-ui/core';
 

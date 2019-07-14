@@ -16,10 +16,10 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faCheckSquare, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
-import Header from '../header';
-import MessagesFrench from '../../i18n/fr';
+import Header from '../components/header';
+import MessagesFrench from '../i18n/fr';
 import './layout.css';
-import '../../styles/layout-overide.css';
+import '../styles/layout-overide.css';
 import 'devicon/devicon.min.css';
 import 'cookieconsent/build/cookieconsent.min.css';
 
