@@ -33,7 +33,7 @@ export default {
     contact: {
       title: 'Contact',
       description: 'Restons en contact',
-      status: 'Dispo en freelance',
+      status: 'Dispo Octobre 2019',
       formTitle: 'Que puis-je faire pour vous ?',
       name: 'Nom',
       email: 'Email',
