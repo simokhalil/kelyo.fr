@@ -1,6 +1,7 @@
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { globalHistory } from '@reach/router';
@@ -33,6 +34,13 @@ const Header = ({ siteTitle, t, ...props }) => {
             resume
             contact
             blog
+          }
+        }
+      }
+      logo: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 80, maxHeight: 80) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -98,8 +106,8 @@ const Header = ({ siteTitle, t, ...props }) => {
       <header className={`header animate ${isOpen ? '' : 'mobile-menu-hide'}`}>
         <div className="header-content">
           <div className="header-image">
-            <Link to="/">
-              <img src="/images/kelyo_logo.png" alt={siteTitle} />
+            <Link to="/" style={{ display: 'flex', justifyContent: 'center' }}>
+              <Img fluid={data.logo.childImageSharp.fluid} alt={siteTitle} style={{ width: '70px', height: '70px'}} />
             </Link>
           </div>
 
@@ -152,8 +160,8 @@ const Header = ({ siteTitle, t, ...props }) => {
       <div className="mobile-header mobile-visible">
         <div className="mobile-logo-container">
           <div className="mobile-header-image">
-            <Link to="/">
-              <img src="/images/kelyo_logo.png" alt={siteTitle} />
+            <Link to="/" style={{ display: 'flex', justifyContent: 'center' }}>
+              <Img fluid={data.logo.childImageSharp.fluid} alt={siteTitle} style={{ width: '34px', height: '34px' }} />
             </Link>
           </div>
 

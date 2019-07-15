@@ -33,13 +33,6 @@
     z-index: 0;
 }
 
-.header-image img {
-    height: auto;
-    max-height: 80px;
-    width: auto;
-    max-width: 80px;
-}
-
 .site-title-block {
     position: relative;
     z-index: 1;
@@ -239,21 +232,18 @@
     .mobile-logo-container {
         margin: 0 20px;
         text-align: left;
-    }
-
-    .mobile-logo-container {
-        margin: 0 20px;
-        text-align: left;
         float: left;
+        display: flex;
+        align-items: center;
     }
 
     .mobile-header-image {
         float: left;
+        margin-right: 10px;
     }
 
     .mobile-header-image img {
         max-height: 34px;
-        margin: 8px 8px 8px 0;
     }
 
     .mobile-site-title {
