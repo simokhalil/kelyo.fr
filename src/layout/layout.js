@@ -44,7 +44,7 @@ try {
       "message": "Hé oui, ici aussi les cookies sont de la partie...\nPourquoi ? Tout simplement pour avoir une idée de comment le site est fréquenté.\nSi vous restez, c'est que vous êtes à priori d'accord sur le principe",
       "dismiss": "OK",
       "link": "Je veux en savoir plus",
-      "href": "https://www.kelyo.fr"
+      "href": "/cookies"
     }
   });
 } catch (e) {
