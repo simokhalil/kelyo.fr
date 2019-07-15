@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title, pathname, url }) {
+function SEO({ description, lang, meta, title, pathname, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,6 +20,7 @@ function SEO({ description, lang, meta, title, pathname, url }) {
             description
             author
             siteUrl
+            defaultImage: image
           }
         }
       }
@@ -27,7 +28,8 @@ function SEO({ description, lang, meta, title, pathname, url }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const siteUrl = url || site.siteMetadata.siteUrl;
+  const siteUrl = `${site.siteMetadata.siteUrl}${pathname || ''}`;
+  const thumbnail = image || site.siteMetadata.defaultImage;
 
   return (
     <Helmet
@@ -43,10 +45,12 @@ function SEO({ description, lang, meta, title, pathname, url }) {
         { property: 'og:description', content: metaDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Kelyo' },
-        {
-          property: 'og:url',
-          content: pathname ? siteUrl + pathname : siteUrl,
-        },
+        { property: `og:image`, content: thumbnail },
+        { property: `og:image:secure_url`, content: thumbnail },
+        { property: `og:image:width`, content: '1200' },
+        { property: `og:image:height`, content: '630' },
+        { property: `og:locale`, content: `fr` },
+        { property: 'og:url', content: siteUrl },
         { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:creator', content: site.siteMetadata.author },
         { name: 'twitter:title', content: title },
@@ -58,9 +62,10 @@ function SEO({ description, lang, meta, title, pathname, url }) {
 }
 
 SEO.defaultProps = {
-  lang: 'en',
+  lang: 'fr',
   meta: [],
   description: '',
+  image: null,
 };
 
 SEO.propTypes = {
@@ -68,6 +73,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default SEO;
