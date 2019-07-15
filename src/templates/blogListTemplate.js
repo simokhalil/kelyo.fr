@@ -23,7 +23,7 @@ const BlogPage = ({ data, pageContext, t }) => {
   return (
     <>
       <SEO
-        title={'pages.blog.title'}
+        title={t('pages.blog.title')}
         pathname="/blog/"
         description={t('pages.blog.description')}
       />

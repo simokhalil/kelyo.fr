@@ -27,7 +27,8 @@ const Template = ({ data }) => {
         title={frontmatter.title}
         pathname={`/blog/${fields.slug}`}
         description={excerpt}
-      />
+        image={frontmatter.image}
+    />
 
       <Page>
         <img
