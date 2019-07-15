@@ -1,6 +1,6 @@
 ---
 title: Un site web statique grâce à GatsbyJS et Netlify CMS
-date: 2019-07-07T01:42:02.332Z
+date: 2019-07-15T01:42:02.332Z
 categories:
   - JAMStack
 tags:
