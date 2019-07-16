@@ -20,6 +20,7 @@ const useStyles = makeStyles({
         right: 0,
         overflowX: 'hidden',
         overflowY: 'auto',
+        WebkitOverflowScrolling: 'touch',
         WebkitTransform: 'translate3d(0, 0, 0)',
         transform: 'translate3d(0, 0, 0)',
     },
