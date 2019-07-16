@@ -75,8 +75,6 @@ const IndexPage = ({ t }) => {
   const { basics } = data.profile.childDataJson;
   const imageData = data.profileImage.childImageSharp.fluid;
 
-  const devIconColoredClass = 'colored';
-
   return (
     <>
       <SEO title={data.config.siteMetadata.author} />

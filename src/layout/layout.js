@@ -48,7 +48,7 @@ try {
     }
   });
 } catch (e) {
-  console.log(e)
+  console.log('warning: window is not defined');
 }
 
 library.add(fab, far, fas, faCheckSquare, faMobileAlt);
