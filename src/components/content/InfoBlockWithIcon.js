@@ -15,8 +15,8 @@ const useStyles = makeStyles({
     },
     iconWrapper: {
         display: 'table-cell',
-        width: '54px',
-        paddingRight: '25px',
+        width: '70px',
+        paddingTop: '10px',
     },
     icon: {
         position: 'relative',
