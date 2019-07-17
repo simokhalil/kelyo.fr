@@ -1,6 +1,6 @@
 ---
 title: Créer un site web statique avec Gatsby
-date: 2019-07-17T10:04:41.883Z
+date: 2019-07-20T10:04:41.883Z
 categories:
   - JAMStack
   - React
@@ -137,19 +137,28 @@ Prenons quelques minutes pour regarder comment est disposé notre projet. Dans n
 * `/public` Généré automatiquement au moment du build. C'est ce dossier qui contiendra les fichiers et assets compilés de votre projet. Doit être ajouté à votre fichier `.gitignore` si ce n'est pas déjà le cas.
 * `/plugins` Ce dossier comporte les plugins spécifiques qui ne sont pas publiés comme package npm (locaux donc).
 * `/src` C'est votre dossier de "travail". Il contiendra tout votre code qui conditionne ce qui est affiché sur votre site web, comme votre header/footer, vos templates de pages. Vu que Gatsby est basé sur `React.js`, le contenu de ce dossier, dépendra certes de votre projet, mais ressemblera forcément à un projet `React.js` classique.
-  - `pages` Chaque composant que vous créez dans ce dossier devient une page de votre site, avec un chemin (URL path) basé sur son nom.
-  - `/templates` Contient les gabarits qui serviront à générer des pages dynamiquement.
-  - `html.js` Il nous servira à surcharger la configuration par défaut du fichier `index.html` généré.
+  * `pages` Chaque composant que vous créez dans ce dossier devient une page de votre site, avec un chemin (URL path) basé sur son nom.
+  * `/templates` Contient les gabarits qui serviront à générer des pages dynamiquement.
+  * `html.js` Il nous servira à surcharger la configuration par défaut du fichier `index.html` généré.
 * `static` Tout fichier que vous mettrez ici ne va pas être traité par Webpack. Il sera copié tel quel dans le dossier `public`. Il servira notamment pour des assets à embarquer dans notre site (fichiers téléchargeables par exemple).
 
 #### Fichiers
-- `gatsby-browser.js` Ce fichier vous servira à définir un usage spécifique des API du navigateur. Certains plugins vous demanderont de rajouter du code dedans.
-- `gatsby-config.js` Ce fichier est le moteur même de votre projet Gatsby. Dans ce fichier, vous pouvez définir les méta-data de votre site comme son titre et sa description, les plugins que vous souhaitez activer ainsi que la définition de leurs options...
-- `gatsby-node.js` Ce fichier vous servira à définir un usage spécifique des API Node.js. C'est dans ce fichiers que vous pourrez générer des pages dynamiquement.
-- `gatsby-ssr.js` Ce fichier vous servira à définir un usage spécifique des API du Server Side Rendering. 
+
+* `gatsby-browser.js` Ce fichier vous servira à définir un usage spécifique des API du navigateur. Certains plugins vous demanderont de rajouter du code dedans.
+* `gatsby-config.js` Ce fichier est le moteur même de votre projet Gatsby. Dans ce fichier, vous pouvez définir les méta-data de votre site comme son titre et sa description, les plugins que vous souhaitez activer ainsi que la définition de leurs options...
+* `gatsby-node.js` Ce fichier vous servira à définir un usage spécifique des API Node.js. C'est dans ce fichiers que vous pourrez générer des pages dynamiquement.
+* `gatsby-ssr.js` Ce fichier vous servira à définir un usage spécifique des API du Server Side Rendering. 
+
+## Du code, du code, du code !
+
+Ouvrez le projet avec votre IDE préféré (Perso, j'utilise [VS Code](https://code.visualstudio.com)), démarrez le serveur (`gatsby develop` ou `yarn start`) et commençons à tester.
+
+Comme vous pouvez le remarquer, vous avez 3 composants dans votre dossier `pages` : `404.js`, `index.js` et `page-2.js`.
+
+Si vous faites pointer votre navigateur sur [http://localhost:8000](http:localhost:8000) vous verrez s'afficher le contenu du composant `index.js`.
 
 
 
 
 
-
+Now, making a simple change to the default page is easy, just open src/pages/index.js and change “Hello world!” to something else, and save. The browser should instantly hot reload the component (which means the page does not actually refresh, but the content changes - a trick made possible by the underlying technology).
