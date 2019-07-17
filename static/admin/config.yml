@@ -16,8 +16,8 @@ slug:
 collections:
   - name: posts
     label: Posts
-    slug: "{{slug}}"
-    folder: "content/blog/posts/{{slug}}"
+    slug: "{{slug}}/index.md"
+    folder: "content/blog/posts"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
