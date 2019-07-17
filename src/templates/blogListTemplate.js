@@ -20,6 +20,11 @@ const BlogPage = ({ data, pageContext, t }) => {
   const { postList, config } = data;
   const { currentPage, numPages } = pageContext;
 
+  // Filter posts to not display future ones
+  if (process.env.NODE_ENV !== 'development') {
+    postList.edges = postList.edges.filter(edge => new Date(edge.node.fields.date) <= new Date());
+  }
+
   return (
     <>
       <SEO
@@ -80,6 +85,8 @@ export const listQuery = graphql`
             slug
             year
             month
+            day
+            date
           }
           frontmatter {
             date(formatString: "Do MMMM YYYY", locale: "fr")
