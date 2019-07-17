@@ -1,6 +1,6 @@
 ---
 title: Créer un site web statique avec Gatsby
-date: 2019-07-20T10:04:41.883Z
+date: 2019-07-31T10:04:41.883Z
 categories:
   - JAMStack
   - React
