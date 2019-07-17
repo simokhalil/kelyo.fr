@@ -152,6 +152,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       // Get node's slug
       const slug = createFilePath({ node, getNode });
 
+      console.log('slug', slug);
+
       // Create a field with slug value
       createNodeField({
         node,

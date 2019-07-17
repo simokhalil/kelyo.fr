@@ -121,28 +121,28 @@ module.exports = {
         htmlTitle: `Content Manager - Kelyo`,
       },
     },
-    {
+    { // Blog posts
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
         path: `${__dirname}/content/blog/posts`,
       },
     },
-    {
+    { // Blog categories
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `categories`,
         path: `${__dirname}/content/blog/categories`,
       },
     },
-    {
+    { // Blog tags
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `tags`,
         path: `${__dirname}/content/blog/tags`,
       },
     },
-    {
+    { // static site pages
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages_content`,
