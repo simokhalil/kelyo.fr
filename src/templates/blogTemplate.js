@@ -1,5 +1,5 @@
 import React from 'react';
-import { Disqus } from 'gatsby-plugin-disqus';
+import { DiscussionEmbed } from 'disqus-react';
 import { Link, graphql } from 'gatsby';
 import { globalHistory } from '@reach/router';
 
@@ -72,7 +72,7 @@ const Template = ({ data }) => {
           </div>
 
           <div className="container">
-            <Disqus config={disqusConfig} />
+            <DiscussionEmbed shortname={config.siteMetadata.disqusShortName} config={disqusConfig} />
           </div>
         </Section>
       </Page>
@@ -103,6 +103,7 @@ export const pageQuery = graphql`
       siteMetadata {
         siteUrl
         author
+        disqusShortName
       }
     }
   }

@@ -14,6 +14,7 @@ module.exports = {
       contact: !!+process.env.CONTACT,
       blog: !!+process.env.BLOG,
     },
+    disqusShortName: process.env.DISQUS_SHORT_NAME,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -147,12 +148,6 @@ module.exports = {
         name: `pages_content`,
         path: `${__dirname}/content/site`,
       },
-    },
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `kelyo`
-      }
     },
     {
       resolve: "gatsby-plugin-transition-link",

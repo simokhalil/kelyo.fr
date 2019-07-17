@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommentCount } from 'gatsby-plugin-disqus';
+import { CommentCount } from 'disqus-react';
 import { Link } from 'gatsby';
 import { Paper } from '@material-ui/core';
 
@@ -24,12 +24,15 @@ const BlogListItem = ({ path, node, config }) => {
                         </span>
                         <span className="blog-item-meta comments">
                             <CommentCount
+                                shortname={config.siteMetadata.disqusShortName}
                                 config={{
                                     url: `${config.siteMetadata.siteUrl}${path}`,
                                     identifier: node.id,
                                     title: node.frontmatter.title,
                                 }}
-                                placeholder={'...'} />
+                            >
+                                ...
+                            </CommentCount>
                         </span>
                         <h4>{node.frontmatter.title}</h4>
                         {/* <p>{node.excerpt}</p> */}

@@ -100,6 +100,7 @@ export const listQuery = graphql`
       siteMetadata {
         siteUrl
         author
+        disqusShortName
       }
     }
   }
