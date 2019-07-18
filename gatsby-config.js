@@ -14,6 +14,7 @@ module.exports = {
       contact: !!+process.env.CONTACT,
       blog: !!+process.env.BLOG,
     },
+    disqusShortName: process.env.DISQUS_SHORT_NAME,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -117,41 +118,36 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         enableIdentityWidget: true,
+        htmlTitle: `Content Manager - Kelyo`,
       },
     },
-    {
+    { // Blog posts
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
         path: `${__dirname}/content/blog/posts`,
       },
     },
-    {
+    { // Blog categories
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `categories`,
         path: `${__dirname}/content/blog/categories`,
       },
     },
-    {
+    { // Blog tags
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `tags`,
         path: `${__dirname}/content/blog/tags`,
       },
     },
-    {
+    { // static site pages
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages_content`,
         path: `${__dirname}/content/site`,
       },
-    },
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `kelyo`
-      }
     },
     {
       resolve: "gatsby-plugin-transition-link",

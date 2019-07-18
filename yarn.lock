@@ -4468,6 +4468,11 @@ direction@^0.1.5:
   resolved "https://registry.yarnpkg.com/direction/-/direction-0.1.5.tgz#ce5d797f97e26f8be7beff53f7dc40e1c1a9ec4c"
   integrity sha1-zl15f5fib4vnvv9T99xA4cGp7Ew=
 
+disqus-react@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/disqus-react/-/disqus-react-1.0.6.tgz#35540425cf105075e9f2cc1f18e7b03f63a55879"
+  integrity sha512-rH3oq0FsjX4lIfRu2AmannoLVEv4n7tlwrwQ/aCnFD/j7ClVogpU72WOuj8OwtdQYX8cEYUbaurdwTqSTD2SFg==
+
 dnd-core@^7.7.0:
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/dnd-core/-/dnd-core-7.7.0.tgz#3166aefc8c5b85ca4ade4ae836712a3108975fab"
@@ -5920,14 +5925,6 @@ gatsby-plugin-catch-links@^2.0.15:
   dependencies:
     "@babel/runtime" "^7.0.0"
     escape-string-regexp "^1.0.5"
-
-gatsby-plugin-disqus@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.1.1.tgz#981e1a1dd8ffefc0394594207c25740a38843c7b"
-  integrity sha512-M0ghDlQ764YLE28yMMQDfyHjK3oiFQ/K4xMvJD46mjWRZ5rS2BL94HKxzsXcmjeDeGlognSj5tLR9L0Ka3G76Q==
-  dependencies:
-    babel-preset-gatsby-package "^0.1.2"
-    cross-env "^5.2.0"
 
 gatsby-plugin-google-analytics@^2.1.0:
   version "2.1.0"

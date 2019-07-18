@@ -18,6 +18,8 @@ exports.createPages = async ({ actions, graphql }) => {
               slug
               year
               month
+              day
+              date
             }
             frontmatter {
               date
@@ -150,6 +152,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       // Get node's slug
       const slug = createFilePath({ node, getNode });
 
+      console.log('slug', slug);
+
       // Create a field with slug value
       createNodeField({
         node,
@@ -164,6 +168,11 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       const nodeDate = new Date(date);
       const month = `0${nodeDate.getMonth() + 1}`.slice(-2);
 
+      createNodeField({
+        node,
+        name: 'date',
+        value: nodeDate.toISOString(),
+      });
       createNodeField({
         node,
         name: 'year',

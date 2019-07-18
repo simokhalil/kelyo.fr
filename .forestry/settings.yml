@@ -1,0 +1,42 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: ''
+webhook_url: 
+sections:
+- type: directory
+  path: content/blog/posts
+  label: Posts
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/blog/categories
+  label: Categories
+  create: documents
+  match: "**/*"
+- type: directory
+  path: content/blog/tags
+  label: Tags
+  create: documents
+  match: "**/*"
+- type: directory
+  path: content/site
+  label: Pages
+  create: all
+  match: "**/*"
+upload_dir: static/images/uploads
+public_path: "/images/uploads"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":filename:"
+instant_preview: true
+build:
+  preview_command: gatsby build
+  publish_command: gatsby build
+  preview_output_directory: public
+  output_directory: public
+  instant_preview_command: gatsby develop -H 0.0.0.0 -p 8080
+  install_dependencies_command: yarn install
+  preview_docker_image: node:10
+  mount_path: "/srv"
+  working_dir: "/srv"
