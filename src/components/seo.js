@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title, pathname, image }) {
+function SEO({ description, lang, meta, title, pathname, image, keywords }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,6 +20,7 @@ function SEO({ description, lang, meta, title, pathname, image }) {
             description
             author
             siteUrl
+            keywords
             defaultImage: image
           }
         }
@@ -30,6 +31,7 @@ function SEO({ description, lang, meta, title, pathname, image }) {
   const metaDescription = description || site.siteMetadata.description;
   const siteUrl = `${site.siteMetadata.siteUrl}${pathname || ''}`;
   const thumbnail = image || site.siteMetadata.defaultImage;
+  const metaKeywords = `${site.siteMetadata.keywords},${(keywords || '')}`;
 
   return (
     <Helmet
@@ -39,9 +41,10 @@ function SEO({ description, lang, meta, title, pathname, image }) {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
-        { name: 'title', content: title },
+        { name: 'title', content: `${title} | ${site.siteMetadata.title}` },
         { name: 'description', content: metaDescription },
-        { property: 'og:title', content: title },
+        { name: 'keywords', content: metaKeywords },
+        { property: 'og:title', content: `${title} | ${site.siteMetadata.title}` },
         { property: 'og:description', content: metaDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Kelyo' },
@@ -53,7 +56,7 @@ function SEO({ description, lang, meta, title, pathname, image }) {
         { property: 'og:url', content: siteUrl },
         { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:creator', content: site.siteMetadata.author },
-        { name: 'twitter:title', content: title },
+        { name: 'twitter:title', content: `${title} | ${site.siteMetadata.title}` },
         { name: 'twitter:description', content: metaDescription },
         { name: 'robots', content: 'index, follow' },
       ].concat(meta)}

@@ -28,6 +28,7 @@ const Template = ({ data }) => {
         pathname={`/blog/${fields.slug}`}
         description={excerpt}
         image={frontmatter.image}
+        keywords={frontmatter.keywords.join(',')}
     />
 
       <Page>
