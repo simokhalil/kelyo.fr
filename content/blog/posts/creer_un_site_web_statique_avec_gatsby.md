@@ -1,8 +1,9 @@
 ---
 title: Créer un site web statique avec Gatsby
-date: 2019-07-31T10:04:41.883Z
+date: 2019-07-18T10:04:41.883Z
 categories:
   - JAMStack
+  - Tutos
   - React
 tags:
   - React
@@ -149,7 +150,7 @@ Prenons quelques minutes pour regarder comment est disposé notre projet. Dans n
 * `gatsby-node.js` Ce fichier vous servira à définir un usage spécifique des API Node.js. C'est dans ce fichiers que vous pourrez générer des pages dynamiquement.
 * `gatsby-ssr.js` Ce fichier vous servira à définir un usage spécifique des API du Server Side Rendering. 
 
-## Du code, du code, du code !
+## Analyse du projet
 
 Ouvrez le projet avec votre IDE préféré (Perso, j'utilise [VS Code](https://code.visualstudio.com)), démarrez le serveur (`gatsby develop` ou `yarn start`) et commençons à tester.
 
@@ -159,7 +160,7 @@ Si vous faites pointer votre navigateur sur [http://localhost:8000](http:localho
 
 A partir de là, modifier votre site est très simple, ouvrez le fichier `index.js` dans votre IDE et faites des modifications sur le composants, puis sauvegarder pour voir les modifications s'appliquer instantanément.
 
-De la même manière, vous pouvez modifier le fichier `page-2.js` qui est accessible à l'adresse [http://localhost:8000/page-2](http://localhost:8000/page-2)
+De la même manière, vous pouvez modifier le fichier `page-2.js` qui est accessible à l'adresse <http://localhost:8000/page-2>
 
 ### Navigation entre les pages
 
@@ -172,12 +173,15 @@ import { Link } from 'gatsby';
 ```
 
 et utilisez-le dans votre code JSX:
+
 ```Javascript
 <Link to="/page-3/">Page 3</Link>
 ```
+
 Testez le fonctionnement sur votre navigateur.
 
 ### Ajouter du style
+
 Dans vos composants, il est possible d'importer n'importe quel fichier CSS :
 
 ```Javascript
@@ -189,6 +193,7 @@ et appliquer les classes adéquates sur les éléments que vous souhaitez stylis
 ```JSX
 <p className="my-class">...</p>
 ```
+
 Autrement, vous pouvez également définir des styles "in-line" directement dans votre code JSX, bien que je ne saurais vous recommander cette pratique, du fait qu'elle impacte la lisibilité et la maintenabilité de votre code :
 
 ```JSX
@@ -203,4 +208,63 @@ Autrement, vous pouvez également définir des styles "in-line" directement dans
 ```
 
 ### Utiliser les plugins Gatsby
-...
+
+Gatsby propose toute une panoplie de fonctionnalités embarquées. Mais il peut être agrémenté par d'autres fonctionnalités fournies par les [plugins](https://www.gatsbyjs.org/plugins/). Et il y en un bon nombre.
+
+Il y a 3 types de plugins dans l'écosystème Gatsby:
+
+* **_Source plugins_** : Ces plugins requêtent les données à partir d'une source donnée et créent des noeuds (nodes) qui peuvent ensuite être filtrées par les _transformer plugins_.
+* **_Transformer plugins_** : Il transforment les données fournies par les _source plugins_ en données utilisables par Gatsby.
+* **_Functional plugins_** : Ces plugins ajoutent de nouvelles fonctionnalités à Gatsby, comme la génération d'un sitemap ou autre.
+
+L'installation d'un plugin passe par 2 étapes simples :
+* Installer le plugin avec `npm`/`yarn`
+* Déclarer le plugin dans le fichier de configuration de Gatsby `gatsby-config.js`
+
+Par exemple, pour installer le plugin permettant de générer un sitemap :
+
+```bash
+yarn add gatsby-plugin-sitemap
+```
+
+Et dans le fichier `gatsby-config.js` (vous pouvez le créer s'il n'est pas déjà fourni par votre starter), ajouter le plugin au tableau exporté :
+
+```Javascript
+module.exports = {
+  plugins: ['gatsby-plugin-sitemap']
+}
+```
+C'est tout, votre plugin fait désormais son travail.
+
+## Construction le site statique (Build)
+Quand avez fini de personnaliser votre site Gatsby et que vous voulez construire un package de production, vous aurez besoin de lancer la commande suivante :
+
+```bash
+gatsby build
+```
+ou si cela a été configuré dans les scripts `package.json` :
+```bash
+yarn build
+```
+
+Une fois l'opération réussi, le "bundle" de votre site sera présent dans le dossier `public`.
+
+Vous pouvez visualiser le résultat du build en lançant la commande :
+```bash
+gatsby serve
+```
+ou si cela a été configuré dans les scripts `package.json` :
+```bash
+yarn serve
+```
+
+qui lancera un serveur local présentant le contenu du dossier `public`, avec donc un résultat très similaire à ce que vous auriez en production.
+
+
+## Déploiement
+Dès que vous êtes content(e) du résultat, tout ce dont vous avez besoin pour voir votre site en ligne est de déployer le contenu du dossier `public`.
+
+Dépendant de la solution de déploiement choisie, il y aurait plusieurs étapes ici. Je ferai prochainement des posts pour les plus connues. En attendant, je vous renvoie vers [la très bonne documentation](https://www.gatsbyjs.org/docs/deploying-and-hosting/) du sujet sur le site de Gatsby.
+
+
+
