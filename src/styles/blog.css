@@ -58,6 +58,13 @@
     font-style: italic;
 }
 
+code:not(.vscode-highlight-code) {
+    padding: 2px 4px;
+    color: #c0341d;
+    background-color: #fbe5e1;
+    border-radius: 4px;
+}
+
 .post-meta {
     display: inline-block;
     width: 100%;
