@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import BlogCategoriesTagsList from '../../components/blog/BlogCategoriesTagsList';
 import Page from '../../components/common/Page';
-import PageTitle from '../../components/common/PageTitle';
+import SEO from '../../components/seo';
 import Section from '../../components/common/Section';
 
 const CategoriesPage = () => {
@@ -20,6 +20,7 @@ const CategoriesPage = () => {
               frontmatter {
                 date(formatString: "Do MMMM YYYY", locale: "fr")
                 title
+                keywords
               }
             }
           }
@@ -38,35 +39,47 @@ const CategoriesPage = () => {
     dataGroup = dataGroup.filter(item => item.fieldValue.toLowerCase().indexOf(search.toLowerCase()) > -1);
   }
 
+  let keywords = [];
+  data.allMarkdownRemark.group.forEach((tag) => {
+    tag.edges.forEach((post) => {
+      keywords = keywords.concat(post.node.frontmatter.keywords.filter(keyword => keywords.indexOf(keyword) < 0));
+    });
+  });
+
   return (
-    <Page>
-      <Section fullWidth={isMobileOnly}>
+    <>
 
-        <div style={{ maxWidth: '800px', margin: 'auto', padding: '0 10px' }}>
-          <input
-            placeholder="Rechercher une catégorie"
-            style={{
-              height: 'auto',
-              padding: '10px 0',
-              fontSize: '25px',
-              lineHeight: '30px',
-              background: '0 0',
-              width: '100%',
-              border: 'none',
-              outline: 0,
-              color: '#5d686f',
-              fontWeight: '300',
-              marginBottom: '30px',
-            }}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+      <SEO title="Blog - Catégories" keywords={keywords.join(',')} />
 
-          <BlogCategoriesTagsList data={dataGroup} />
+      <Page>
+        <Section fullWidth={isMobileOnly}>
 
-        </div>
-      </Section>
-    </Page>
+          <div style={{ maxWidth: '800px', margin: 'auto', padding: '0 10px' }}>
+            <input
+              placeholder="Rechercher une catégorie"
+              style={{
+                height: 'auto',
+                padding: '10px 0',
+                fontSize: '25px',
+                lineHeight: '30px',
+                background: '0 0',
+                width: '100%',
+                border: 'none',
+                outline: 0,
+                color: '#5d686f',
+                fontWeight: '300',
+                marginBottom: '30px',
+              }}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+
+            <BlogCategoriesTagsList data={dataGroup} />
+
+          </div>
+        </Section>
+      </Page>
+    </>
   );
 }
 

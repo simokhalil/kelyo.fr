@@ -8,6 +8,7 @@ module.exports = {
     description: `Développeur Web et Mobile multi-platefomes, je suis consultant sur les nouvelles technos (Javascript, ReactJS / React Native, Angular, NodeJS) sur Nantes et alentours`,
     author: `Khalil EL ISMAILI`,
     siteUrl: `https://www.kelyo.fr`,
+    keywords: `site,web,personnel,khalil,elismaili,el,ismaili,kelyo,kelyo.fr,cv,resume,portfolio,developpeur,developer,javascript,react,native,mobile,lead,dev`,
     image: '/images/khalil_el_ismaili.jpg',
     menus: {
       resume: !!+process.env.RESUME,
