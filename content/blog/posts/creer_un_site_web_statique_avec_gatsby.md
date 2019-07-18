@@ -18,7 +18,7 @@ keywords:
   - statique
   - static
   - jamstack
-image: /images/uploads/blog1.jpg
+image: /images/uploads/creer_un_site_web_statique_avec_gatsby.jpg
 ---
 Pour ce deuxième article de mon blog, je vais rentrer un peu plus dans le vif du sujet de la JAMStack et des sites web statiques, avec [Gatsby](https://www.gatsbyjs.org).
 
