@@ -155,10 +155,52 @@ Ouvrez le projet avec votre IDE préféré (Perso, j'utilise [VS Code](https://c
 
 Comme vous pouvez le remarquer, vous avez 3 composants dans votre dossier `pages` : `404.js`, `index.js` et `page-2.js`.
 
-Si vous faites pointer votre navigateur sur [http://localhost:8000](http:localhost:8000) vous verrez s'afficher le contenu du composant `index.js`.
+Si vous faites pointer votre navigateur sur [http://localhost:8000](http:localhost:8000) vous verrez s'afficher le contenu du composant `index.js`. 
 
+A partir de là, modifier votre site est très simple, ouvrez le fichier `index.js` dans votre IDE et faites des modifications sur le composants, puis sauvegarder pour voir les modifications s'appliquer instantanément.
 
+De la même manière, vous pouvez modifier le fichier `page-2.js` qui est accessible à l'adresse [http://localhost:8000/page-2](http://localhost:8000/page-2)
 
+### Navigation entre les pages
 
+Il est possible de créer des liens entre les pages grâce à un composant React fourni par Gatsby, appelé Link.
 
-Now, making a simple change to the default page is easy, just open src/pages/index.js and change “Hello world!” to something else, and save. The browser should instantly hot reload the component (which means the page does not actually refresh, but the content changes - a trick made possible by the underlying technology).
+Pour illustrer cet aspect, on va ajouter une nouvelle page `src/pages/page-3.js`, et on va créer un lien sur la `page-2`. Pour ce faire, importez le composant Link dans composant `page-2`:
+
+```Javascript
+import { Link } from 'gatsby';
+```
+
+et utilisez-le dans votre code JSX:
+```Javascript
+<Link to="/page-3/">Page 3</Link>
+```
+Testez le fonctionnement sur votre navigateur.
+
+### Ajouter du style
+Dans vos composants, il est possible d'importer n'importe quel fichier CSS :
+
+```Javascript
+import './index.css';
+```
+
+et appliquer les classes adéquates sur les éléments que vous souhaitez styliser : 
+
+```JSX
+<p className="my-class">...</p>
+```
+Autrement, vous pouvez également définir des styles "in-line" directement dans votre code JSX, bien que je ne saurais vous recommander cette pratique, du fait qu'elle impacte la lisibilité et la maintenabilité de votre code :
+
+```JSX
+<p 
+  style={{
+    margin: '0 auto',
+    padding: '20px'
+  }}
+>
+  Hello world
+</p>
+```
+
+### Utiliser les plugins Gatsby
+...
