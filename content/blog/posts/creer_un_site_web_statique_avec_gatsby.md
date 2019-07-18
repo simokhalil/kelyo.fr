@@ -1,5 +1,5 @@
 ---
-title: Créer un site web statique avec Gatsby
+title: Comment créer un site web statique avec GatsbyJS
 date: 2019-07-18T10:04:41.883Z
 categories:
   - JAMStack
